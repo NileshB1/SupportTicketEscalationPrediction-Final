@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Model Performance | Escalation AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#89f5e7",     "tertiary": "#000000",
+                        "secondary-fixed-dim": "#6bd8cb",  "surface-dim": "#cbdbf5",
+                        "surface-container": "#e5eeff",   "on-error": "#ffffff",
+                        "on-primary-container": "#7c839b",  "on-background": "#0b1c30",
+                        "on-primary-fixed-variant": "#3f465c",     "primary-fixed-dim": "#bec6e0",
+                        "inverse-on-surface": "#eaf1ff",   "on-error-container": "#93000a",
+                        "inverse-surface": "#213145", "outline-variant": "#c6c6cd",
+                        "on-secondary": "#ffffff",  "on-primary-fixed": "#131b2e",
+                        "error": "#ba1a1a",     "on-surface": "#0b1c30",
+                        "primary-container": "#131b2e",  "tertiary-fixed-dim": "#ffb95f",
+                        "tertiary-container": "#2a1700", "primary-fixed": "#dae2fd",
+                        "on-surface-variant": "#45464d",   "surface-tint": "#565e74",
+                        "on-tertiary-fixed-variant": "#653e00", "tertiary-fixed": "#ffddb8",
+                        "surface": "#f8f9ff",  "on-tertiary-container": "#b87500",
+                        "inverse-primary": "#bec6e0",  "on-secondary-fixed-variant": "#005049",
+                        "surface-bright": "#f8f9ff",  "on-tertiary-fixed": "#2a1700",
+                        "secondary-container": "#86f2e4",  "on-primary": "#ffffff",
+                        "surface-container-low": "#eff4ff",   "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed": "#00201d",  "error-container": "#ffdad6",
+                        "outline": "#76777d",  "background": "#f8f9ff",
+                        "secondary": "#006a61",     "on-secondary-container": "#006f66",
+                        "surface-container-lowest": "#ffffff",   "surface-container-high": "#dce9ff",
+                        "on-tertiary": "#ffffff",    "surface-variant": "#d3e4fe",
+                        "primary": "#000000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",   "lg": "0.25rem",
+                        "xl": "0.5rem",  "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "0.5rem",  "gutter": "1rem",
+                        "stack-md": "1rem",  "stack-lg": "1.5rem",
+                        "container-margin": "2rem"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],  "body-md": ["Inter"],
+                        "body-lg": ["Inter"],   "data-mono": ["Inter"],
+                        "label-md": ["Inter"],"headline-lg": ["Inter"],
+                        "headline-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],  "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "data-mono": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],  "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .zebra-table tr:nth-child(even) {
+            background-color: #f1f5f9;
+        }
+</style>
+</head>
+<body class="bg-background font-body-md text-on-background">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-slate-200 bg-slate-50 flex flex-col p-4 gap-2 z-50">
+<div class="mb-8 px-2">
+<h1 class="text-lg font-bold text-slate-900">Escalation AI</h1>
+<p class="text-xs text-slate-500 uppercase tracking-widest font-semibold">Predictive Analytics</p>
+</div>
+
+
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 font-medium hover:bg-slate-100 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 font-medium hover:bg-slate-100 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-label-md text-label-md">Tickets</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-slate-200 text-slate-900 rounded-sm font-semibold transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="font-label-md text-label-md">Model Performance</span>
+</a>
+
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 font-medium hover:bg-slate-100 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-slate-200/50 rounded-lg">
+<div class="flex items-center gap-3">
+
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-white text-xs font-bold">JD</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold text-slate-900 truncate">Lead Researcher</p>
+<p class="text-[10px] text-slate-500 truncate">v2.4.0-stable</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 flex items-center justify-between h-14 px-6 gap-8 ml-64 max-w-[calc(100%-16rem)]">
+<div class="flex items-center bg-slate-100 rounded-md px-3 py-1.5 w-96 border border-slate-200">
+<span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full text-slate-600" placeholder="Search experiments..." type="text"/>
+</div>
+
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:text-primary transition-colors flex items-center">
+<span class="material-symbols-outlined">notifications_active</span>
+</button>
+
+
+<button class="text-slate-500 hover:text-primary transition-colors flex items-center">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200"></div>
+<div class="flex items-center gap-2">
+<img alt="User profile" class="w-8 h-8 rounded-full border border-slate-200 object-cover" data-alt="professional portrait of a research scientist in a minimalist studio setting with soft neutral lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyH4hFVx0hVr2KBnngRaJn1qmECS0YYhzpCvPn1cnEARwMERrBYToA32l2djtwxBFfMIaGliRe-PUv-wxM5X_SxYU6CriWpOaKA4Kh-Q-w_kHcPJDYOnW0J8v4N3oMTPhvk9f7YXmWzdbG47ZNIhgLc5tixTaK3UzAS4F-EAWPn7RrAkHVuv7gJJXv2U9nj76JL30krBVVcyT8TBNHt3DjuLP_CQUoDMidn5cU05hK8hr8-1EpW9-LsANbodAhaKoAw6ATcUJjQsJF"/>
+</div>
+
+</div>
+</header>
+<!--main Content -->
+<main class="ml-64 p-gutter max-w-[1600px]">
+<!-- dashboard Header -->
+<div class="mb-stack-lg flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">Model Performance Analytics</h2>
+<p class="text-on-primary-container font-body-md mt-1">Comparative study of RAG vs Baseline ML architectures for enterprise escalation prediction.</p>
+</div>
+
+
+<div class="flex gap-stack-sm">
+<button class="px-4 py-2 border border-outline rounded-lg text-sm font-medium hover:bg-slate-50 flex items-center gap-2">
+<span class="material-symbols-outlined text-base">download</span> Export PDF
+                </button>
+<button class="px-4 py-2 bg-primary-container text-white rounded-lg text-sm font-medium hover:opacity-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-base">refresh</span> Re-run Validation
+                </button>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- RQ1 Analysis: Comparison Chart -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest border border-slate-200 rounded-xl p-6">
+<div class="flex justify-between items-center mb-6">
+<div>
+
+
+<h3 class="font-headline-sm text-headline-sm text-slate-900">RQ1 Analysis</h3>
+<p class="text-xs text-slate-500 font-medium">RETRIEVAL-AUGMENTED MODEL VS BASELINE ML</p>
+</div>
+
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="text-xs font-semibold">RAG Model</span>
+</div>
+
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary-fixed-dim"></span>
+<span class="text-xs font-semibold">Baseline ML</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-8 h-64 items-end px-4">
+<!-- Precision -->
+<div class="flex flex-col items-center gap-4">
+<div class="w-full flex justify-center items-end gap-2 h-48">
+<div class="w-12 bg-primary-container rounded-t-sm" style="height: 94%;"></div>
+<div class="w-12 bg-secondary-fixed-dim rounded-t-sm" style="height: 82%;"></div>
+</div>
+
+
+<div class="text-center">
+<p class="font-bold text-sm">Precision</p>
+<p class="text-[10px] text-slate-400">94.2% vs 82.1%</p>
+</div>
+</div>
+<!-- Recall -->
+<div class="flex flex-col items-center gap-4">
+<div class="w-full flex justify-center items-end gap-2 h-48">
+<div class="w-12 bg-primary-container rounded-t-sm" style="height: 89%;"></div>
+<div class="w-12 bg-secondary-fixed-dim rounded-t-sm" style="height: 76%;"></div>
+</div>
+<div class="text-center">
+
+<p class="font-bold text-sm">Recall</p>
+<p class="text-[10px] text-slate-400">89.5% vs 76.4%</p>
+</div>
+</div>
+<!-- F1-Score -->
+<div class="flex flex-col items-center gap-4">
+<div class="w-full flex justify-center items-end gap-2 h-48">
+<div class="w-12 bg-primary-container rounded-t-sm" style="height: 91%;"></div>
+<div class="w-12 bg-secondary-fixed-dim rounded-t-sm" style="height: 79%;"></div>
+</div>
+<div class="text-center">
+<p class="font-bold text-sm">F1-Score</p>
+<p class="text-[10px] text-slate-400">91.7% vs 79.1%</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<!--stats Card 1 -->
+<div class="col-span-12 lg:col-span-4 bg-primary-container text-white rounded-xl p-6 relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="text-primary-fixed text-xs font-bold uppercase tracking-widest mb-1">Performance Lift</h4>
+<div class="text-5xl font-black mb-4">+15.8%</div>
+<p class="text-primary-fixed-dim text-sm leading-relaxed">Average accuracy improvement observed after implementing Retrieval-Augmented generation across all datasets.</p>
+</div>
+<!-- Abstract UI Element -->
+<div class="absolute -right-12 -bottom-12 w-48 h-48 bg-white/10 rounded-full blur-3xl"></div>
+</div>
+<!-- sentiment Progression -->
+<div class="col-span-12 lg:col-span-12 bg-white border border-slate-200 rounded-xl p-6">
+<div class="mb-8">
+<h3 class="font-headline-sm text-headline-sm text-slate-900">RQ2 Analysis: Sentiment Progression Impact</h3>
+<p class="font-body-md text-slate-500 mt-1">Measuring prediction confidence as a function of multi-turn sentiment analysis.</p>
+</div>
+<div class="relative h-64 border-l border-b border-slate-200 mb-4">
+<!-- Grid Lines -->
+<div class="absolute inset-0 grid grid-rows-4">
+<div class="border-t border-slate-100 border-dashed"></div>
+<div class="border-t border-slate-100 border-dashed"></div>
+
+<div class="border-t border-slate-100 border-dashed"></div>
+<div class="border-t border-slate-100 border-dashed"></div>
+</div>
+<!-- Line Chart Visualization (SVG) -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none">
+<!-- Baseline Line -->
+<polyline fill="none" points="0,180 200,170 400,175 600,165 800,170 1200,160" stroke="#94a3b8" stroke-dasharray="4" stroke-width="2"></polyline>
+<!-- Sentiment Progression Line -->
+<polyline fill="none" points="0,200 200,150 400,110 600,60 800,40 1200,20" stroke="#006a61" stroke-width="3"></polyline>
+<!-- Gradient Fill -->
+<path d="M0,200 L200,150 L400,110 L600,60 L800,40 L1200,20 V256 H0 Z" fill="url(#grad1)" opacity="0.1"></path>
+<defs>
+
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#006a61;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#006a61;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Labels -->
+<div class="absolute bottom-[-24px] w-full flex justify-between text-[10px] font-bold text-slate-400">
+<span>TURN 1 (INITIAL)</span>
+<span>TURN 3</span><span>TURN 5</span>
+<span>TURN 7</span><span>TURN 10+</span>
+</div>
+<div class="absolute left-[-40px] top-0 h-full flex flex-col justify-between text-[10px] font-bold text-slate-400 text-right w-8">
+<span>1.00</span>
+<span>0.75</span><span>0.50</span>
+<span>0.25</span><span>0.00</span>
+</div>
+</div>
+<div class="mt-12 grid grid-cols-4 gap-gutter">
+<div class="p-4 bg-slate-50 border border-slate-100 rounded-lg">
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter">Peak Accuracy</p>
+<p class="text-xl font-black text-secondary">0.982</p>
+</div>
+<div class="p-4 bg-slate-50 border border-slate-100 rounded-lg">
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter">Progression Slope</p>
+<p class="text-xl font-black text-secondary">+0.12/Turn</p>
+</div>
+<div class="p-4 bg-slate-50 border border-slate-100 rounded-lg">
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter">Baseline Delta</p>
+<p class="text-xl font-black text-secondary">24.5% Improvement</p>
+</div>
+<div class="p-4 bg-slate-50 border border-slate-100 rounded-lg">
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter">Confidence Score</p>
+<p class="text-xl font-black text-secondary">High (0.91)</p>
+</div>
+</div>
+</div>
+
+<!--technical Metrics Table -->
+<div class="col-span-12 bg-white border border-slate-200 rounded-xl overflow-hidden">
+<div class="p-6 border-b border-slate-100 flex justify-between items-center">
+<h3 class="font-headline-sm text-headline-sm text-slate-900">Technical Dataset Benchmarks</h3>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold">LATEST VALIDATION: OCT 24</span>
+</div>
+
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse zebra-table">
+<thead>
+<tr class="bg-slate-50 text-slate-500 text-[10px] font-bold uppercase tracking-widest border-b border-slate-200">
+<th class="px-6 py-4">Dataset Segment</th>
+<th class="px-6 py-4">Samples</th>
+<th class="px-6 py-4">Inference Latency</th> <th class="px-6 py-4">Precision (RAG)</th>
+<th class="px-6 py-4">Recall (RAG)</th> <th class="px-6 py-4">F1 Score</th>
+<th class="px-6 py-4">Status</th>
+</tr>
+</thead>
+<tbody class="text-sm font-data-mono">
+<tr class="border-b border-slate-100">
+<td class="px-6 py-4 font-bold text-slate-900">Customer Care Emails</td>
+<td class="px-6 py-4">124,502</td> <td class="px-6 py-4">142ms</td>
+<td class="px-6 py-4">0.961</td> <td class="px-6 py-4">0.884</td>
+<td class="px-6 py-4">0.921</td> <td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 text-[10px] font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span> Validated
+                                    </span>
+</td>
+</tr>
+<tr class="border-b border-slate-100">
+<td class="px-6 py-4 font-bold text-slate-900">CRM Dataset (Logs)</td>
+<td class="px-6 py-4">88,290</td>
+<td class="px-6 py-4">98ms</td> <td class="px-6 py-4">0.912</td>
+<td class="px-6 py-4">0.905</td> <td class="px-6 py-4">0.908</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 text-[10px] font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span> Validated
+                                    </span>
+</td>
+</tr>
+<tr class="border-b border-slate-100">
+<td class="px-6 py-4 font-bold text-slate-900">Callcenter Tickets</td>
+<td class="px-6 py-4">342,100</td>
+<td class="px-6 py-4">215ms</td> <td class="px-6 py-4">0.948</td>
+<td class="px-6 py-4">0.822</td> <td class="px-6 py-4">0.881</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Reviewing
+                                    </span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-bold text-slate-900">Internal Audit Samples</td>
+<td class="px-6 py-4">12,000</td>
+<td class="px-6 py-4">110ms</td>  <td class="px-6 py-4">0.972</td>
+<td class="px-6 py-4">0.940</td> <td class="px-6 py-4">0.956</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-teal-100 text-teal-800 text-[10px] font-bold uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span> Validated
+                                    </span>
+</td>
+</tr>
+</tbody> </table>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB -->
+<div class="fixed bottom-8 right-8 hidden">
+<button class="w-14 h-14 bg-primary-container text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</body></html>
+<script>
+    if(!localStorage.getItem('auth_token')) {
+        window.location.href = '/app/login.html';
+    }
+    function logout() {
+        localStorage.removeItem('auth_token');
+        window.location.href = '/app/login.html';
+    }
+</script>

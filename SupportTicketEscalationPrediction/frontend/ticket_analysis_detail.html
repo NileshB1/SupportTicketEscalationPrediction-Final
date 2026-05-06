@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#89f5e7",
+                    "tertiary": "#000000",   "secondary-fixed-dim": "#6bd8cb",
+                    "surface-dim": "#cbdbf5",  "surface-container": "#e5eeff",
+                    "on-error": "#ffffff",   "on-primary-container": "#7c839b",
+                    "on-background": "#0b1c30",  "on-primary-fixed-variant": "#3f465c",
+                    "primary-fixed-dim": "#bec6e0", "inverse-on-surface": "#eaf1ff",
+                    "on-error-container": "#93000a", "inverse-surface": "#213145",
+                    "outline-variant": "#c6c6cd",   "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#131b2e",  "error": "#ba1a1a",
+                    "on-surface": "#0b1c30", "primary-container": "#131b2e",
+                    "tertiary-fixed-dim": "#ffb95f", "tertiary-container": "#2a1700",
+                    "primary-fixed": "#dae2fd",  "on-surface-variant": "#45464d",
+                    "surface-tint": "#565e74",  "on-tertiary-fixed-variant": "#653e00",
+                    "tertiary-fixed": "#ffddb8", "surface": "#f8f9ff",
+                    "on-tertiary-container": "#b87500",  "inverse-primary": "#bec6e0",
+                    "on-secondary-fixed-variant": "#005049",
+                    "surface-bright": "#f8f9ff",    "on-tertiary-fixed": "#2a1700",
+                    "secondary-container": "#86f2e4",  "on-primary": "#ffffff",
+                    "surface-container-low": "#eff4ff",  "surface-container-highest": "#d3e4fe",
+                    "on-secondary-fixed": "#00201d",    "error-container": "#ffdad6",
+                    "outline": "#76777d", "background": "#f8f9ff",
+                    "secondary": "#006a61",  "on-secondary-container": "#006f66",
+                    "surface-container-lowest": "#ffffff",  "surface-container-high": "#dce9ff",
+                    "on-tertiary": "#ffffff",  "surface-variant": "#d3e4fe",
+                    "primary": "#000000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",  "lg": "0.25rem",
+                    "xl": "0.5rem",   "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "0.5rem",  "gutter": "1rem",
+                    "stack-md": "1rem",  "stack-lg": "1.5rem",
+                    "container-margin": "2rem"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"], "body-md": ["Inter"],
+                    "body-lg": ["Inter"],  "data-mono": ["Inter"],
+                    "label-md": ["Inter"], "headline-lg": ["Inter"],
+                    "headline-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],  "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "data-mono": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],  "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!--sideNavBar (from JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-slate-200 bg-slate-50 flex flex-col p-4 gap-2 z-50">
+
+<div class="mb-8 px-3">
+<h1 class="text-lg font-bold text-slate-900">Escalation AI</h1>
+<p class="text-xs text-slate-500">Predictive Analytics</p>
+</div>
+
+
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 font-medium hover:bg-slate-100 transition-colors duration-200" href="/app/predictive_analytics_overview.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+
+
+<a class="flex items-center gap-3 px-3 py-2 bg-slate-200 text-slate-900 rounded-sm font-semibold transition-colors duration-200" href="/app/support_queue.html">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-label-md text-label-md">Tickets</span>
+</a>
+
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 font-medium hover:bg-slate-100 transition-colors duration-200" href="/app/model_performance_monitor.html">
+<span class="material-symbols-outlined">insights</span>
+<span class="font-label-md text-label-md">Model Performance</span>
+</a>
+
+</nav>
+
+
+<div onclick="logout()" class="mt-auto p-4 bg-slate-200/50 rounded-lg cursor-pointer hover:bg-red-100 transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-white text-xs font-bold group-hover:bg-red-600">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+
+
+<div class="flex flex-col overflow-hidden">
+<span class="text-xs font-bold text-slate-900 truncate block group-hover:text-red-700">Research Lead</span>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest block group-hover:text-red-500 transition-colors">Sign Out</span>
+</div>
+</div>
+</div>
+</aside>
+
+<!--topNavBar (from JSON) -->
+<header class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 h-14 flex items-center justify-between px-6 gap-8 ml-64">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-1.5 bg-slate-100 border-none rounded-sm text-sm focus:ring-1 focus:ring-primary-container" placeholder="Search high-risk incidents..." type="text"/>
+</div>
+
+
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-500 hover:text-slate-900 transition-colors">notifications_active</button>
+<button class="material-symbols-outlined text-slate-500 hover:text-slate-900 transition-colors">help_outline</button>
+<div class="w-8 h-8 rounded-full bg-slate-200 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a data scientist in a clean office environment with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDrnGuL3oE63JFWhcjN6MaskYZWpdZDXdeAynu_XWCIrvQi31GvFYkndQCAhn9oCWOeHxr8ylOk2C08Kofa4YQdLH-Qe7J1ot7WowVbrY8FL0J3w9XPgUjjfOQRBI72wZqIcTKiHFOaUXirvWwQ-I-M9qjgFMfsb0WKdhUkD3DvGIEB9EdE4juMPpFP2KyHiXKvQVYnzXOroiBA8tUhRhQjl68FzzAuEWQpdDvHMsxxIbWzi20h7VFNmSBH3GEAyABzMsUDT74VzsL"/>
+</div>
+</div>
+</header>
+
+
+<!-- Main Content Canvas -->
+<main class="ml-64 p-gutter max-w-[1600px]">
+<!-- Breadcrumb & Header -->
+<div class="flex flex-col gap-2 mb-stack-lg">
+<div class="flex items-center gap-2 text-slate-500">
+<span class="font-label-md text-label-md">Tickets</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span id="breadcrumb-id" class="font-label-md text-label-md text-primary">Loading...</span>
+</div>
+
+<div class="flex items-center justify-between">
+<h2 id="ticket-title" class="font-headline-lg text-headline-lg text-tertiary">Loading Ticket Highlights...</h2>
+<div class="flex gap-2">
+</div>
+</div>
+</div>
+
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Escalation Risk Score Card -->
+<div class="col-span-12 lg:col-span-4 bg-white border border-slate-200 rounded-xl p-stack-lg flex flex-col justify-between overflow-hidden relative">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Escalation Risk Score</h3>
+<span class="material-symbols-outlined text-error" data-weight="fill">warning</span>
+</div>
+
+
+<div class="flex flex-col items-center py-6">
+<div class="relative w-48 h-48 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-slate-100" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="12"></circle>
+<circle id="risk-circle" class="text-error transition-all duration-1000 ease-in-out" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502.6" stroke-dashoffset="502.6" stroke-width="12"></circle>
+</svg>
+
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span id="risk-text" class="font-headline-lg text-[48px] leading-none text-error">...</span>
+<span id="risk-label" class="font-label-md text-label-md text-slate-500 uppercase tracking-widest mt-1">Calculating</span>
+</div>
+</div>
+</div>
+
+</div>
+<!-- Model Reasoning Card -->
+<div class="col-span-12 lg:col-span-8 bg-primary-container text-white rounded-xl p-stack-lg flex flex-col">
+<div class="flex items-center gap-3 mb-stack-md">
+<div class="p-2 bg-on-primary-container/20 rounded-lg">
+<span class="material-symbols-outlined text-secondary-fixed">psychology</span>
+</div>
+
+
+<h3 class="font-headline-sm text-headline-sm">Model Reasoning</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+<div class="flex flex-col gap-stack-sm">
+<p class="font-label-md text-label-md text-on-primary-container">PRIMARY SIGNALS</p>
+<ul id="model-reasoning-list" class="flex flex-col gap-3">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary-fixed text-sm mt-0.5">pending</span>
+<p class="font-body-md text-body-md text-slate-400">Loading signals...</p>
+</li>
+</ul>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<p class="font-label-md text-label-md text-on-primary-container">AUTOMATED ASSESSMENT</p>
+<div class="bg-white/5 p-stack-md rounded-lg border border-white/10 italic">
+<p id="automated-assessment" class="font-body-md text-body-md text-slate-300">
+                                "Analyzing ticket conversation and semantic context..."
+                            </p>
+</div>
+</div>
+</div>
+</div>
+
+<!--sentiment Timeline Card -->
+<div class="col-span-12 lg:col-span-7 bg-white border border-slate-200 rounded-xl p-stack-lg">
+<div class="flex items-center justify-between mb-stack-lg">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Sentiment Timeline</h3>
+<div class="flex gap-2">
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-[10px] text-slate-500 uppercase tracking-tighter">Positive</span>
+</div>
+
+
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></div>
+<span class="text-[10px] text-slate-500 uppercase tracking-tighter">Neutral</span>
+</div>
+
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-error"></div>
+<span class="text-[10px] text-slate-500 uppercase tracking-tighter">Negative</span>
+</div>
+</div>
+</div>
+
+
+<div id="timeline" class="space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-100">
+    <!-- Timeline messages injected here -->
+</div>
+</div>
+
+<!-- Context-Aware Analysis Panel -->
+<div class="col-span-12 lg:col-span-5 bg-white border border-slate-200 rounded-xl p-stack-lg flex flex-col">
+<div class="flex items-center justify-between mb-stack-lg">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Context-Aware Analysis</h3>
+<p class="font-label-md text-label-md text-slate-500">Historical matches within same domain</p>
+</div>
+<button class="p-2 hover:bg-slate-50 rounded-full transition-colors">
+<span class="material-symbols-outlined text-slate-400">more_vert</span>
+</button>
+</div>
+
+
+<div id="similar-tickets" class="flex flex-col gap-4">
+    <!-- Similar tickets retrieved dynamically from RAG -->
+</div>
+
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Suppressed on Details Page per Mandate, but placeholder for structure) -->
+<script>
+    async function initPage() {
+        // extract id from query param ?id=
+        const urlParams = new URLSearchParams(window.location.search);
+        const ticketId = urlParams.get('id');
+        if (!ticketId) {
+            document.getElementById('ticket-title').innerText = "No Ticket Selected";
+            return;
+        }
+
+        document.getElementById('breadcrumb-id').innerText = ticketId + ' Detail View';
+
+        try {
+            const res = await fetch('/api/tickets/' + ticketId);
+            if(!res.ok) {
+                document.getElementById('ticket-title').innerText = "Ticket Loading Error";
+                return;
+            }
+            const ticketData = await res.json();
+            
+            //set Titles
+            const riskLabel = ticketData.sentiment_score < 0 ? "[High Risk]" : "[Monitored]";
+            document.getElementById('ticket-title').innerText = riskLabel + " " + ticketId;
+
+            //update Risk Score
+            const riskPct = Math.round((ticketData.predicted_risk || 0.5) * 100);
+            document.getElementById('risk-text').innerText = riskPct + "%";
+            
+            let riskLabelText = "Low Risk";
+            let riskColorClass = "text-secondary";
+            if(riskPct > 75) { riskLabelText = "High Risk"; riskColorClass = "text-error"; }
+            else if(riskPct > 40) { riskLabelText = "Medium Risk"; riskColorClass = "text-tertiary-fixed-dim"; }
+            
+            const riskLabelEl = document.getElementById('risk-label');
+            riskLabelEl.innerText = riskLabelText;
+            
+            const riskTextEl = document.getElementById('risk-text');
+            riskTextEl.className = `font-headline-lg text-[48px] leading-none ${riskColorClass}`;
+            
+            const riskCircle = document.getElementById('risk-circle');
+            riskCircle.className = `transition-all duration-1000 ease-in-out ${riskColorClass}`;
+            
+            // Circle circumference
+            const offset = 502.6 - ((riskPct / 100) * 502.6);
+            riskCircle.setAttribute('stroke-dashoffset', offset);
+
+            //update the Reasoning
+            const reasoningListEl = document.getElementById('model-reasoning-list');
+            reasoningListEl.innerHTML = '';
+            if (ticketData.model_reasoning && ticketData.model_reasoning.length > 0) {
+                ticketData.model_reasoning.forEach(r => {
+                    reasoningListEl.innerHTML += `
+                        <li class="flex gap-3">
+                            <span class="material-symbols-outlined text-secondary-fixed text-sm mt-0.5">check_circle</span>
+                            <p class="font-body-md text-body-md">${r}</p>
+                        </li>`;
+                });
+            }
+            document.getElementById('automated-assessment').innerText = `"Based on the analyzed context, the model predicts a ${riskPct}% chance of escalation. The system has automatically extracted ${ticketData.model_reasoning ? ticketData.model_reasoning.length : 0} critical features to form this evaluation."`;
+
+            // Timeline
+            const timelineEl = document.getElementById('timeline');
+            timelineEl.innerHTML = '';
+            ticketData.sentiment_trajectory.forEach(entry => {
+                let sentimentClass = 'tertiary-fixed-dim';
+                let sentimentIcon = 'sentiment_neutral';
+                let alertBgClass = '';
+
+                if (entry.sentiment < -0.3) {
+                    sentimentClass = 'error';
+                    sentimentIcon = 'sentiment_dissatisfied';
+                    alertBgClass = 'bg-error/5 p-3 rounded-lg border-l-4 border-error text-on-surface font-medium';
+                } else if (entry.sentiment > 0.3) {
+                    sentimentClass = 'secondary';
+                    sentimentIcon = 'sentiment_satisfied';
+                }
+
+                timelineEl.innerHTML += `
+                    <div class="relative pl-10 mb-6">
+                        <div class="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-${sentimentClass} flex items-center justify-center ring-4 ring-white">
+                            <span class="material-symbols-outlined text-[14px] text-white">${sentimentIcon}</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <div class="flex items-center justify-between">
+                                <span class="font-label-md text-label-md text-on-surface font-semibold">Message Log</span>
+                                <span class="font-data-mono text-data-mono text-slate-400">${entry.time}</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-slate-600 ${alertBgClass}">"${entry.msg}"</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            // Similar Tickets
+            const simEl = document.getElementById('similar-tickets');
+            simEl.innerHTML = '';
+            ticketData.similar_context_tickets.forEach(simTicket => {
+                
+                const tagColor = simTicket.escalated ? 'bg-error/10 text-error' : 'bg-secondary/10 text-secondary';
+                const escText = simTicket.escalated ? 'Escalated' : 'Resolved';
+
+                simEl.innerHTML += `
+                    <div class="p-4 border border-slate-100 rounded-xl bg-slate-50/50 hover:border-slate-300 transition-colors cursor-pointer group">
+                        <div class="flex items-start justify-between mb-2">
+                            <div class="flex flex-col">
+                                <span class="font-label-md text-label-md text-slate-400">${simTicket.ticket_id} • Similarity: ${simTicket.similarity_score}</span>
+                                <h4 class="font-body-lg text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors">Historical Match</h4>
+                            </div>
+                            <span class="px-2 py-0.5 ${tagColor} text-[10px] font-bold uppercase rounded">${escText}</span>
+                        </div>
+                        <div class="mt-3">
+                            <p class="font-body-md text-body-md text-slate-600 truncate">${simTicket.text_snippet}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            
+        } catch(e) {
+            console.error(e);
+            document.getElementById('ticket-title').innerText = "Failed to parse ticket data";
+        }
+    }
+    document.addEventListener('DOMContentLoaded', initPage);
+</script>
+
+
+<script>
+    if(!localStorage.getItem('auth_token')) {
+        window.location.href = '/app/login.html';
+    }
+    function logout() {
+        localStorage.removeItem('auth_token');
+        window.location.href = '/app/login.html';
+    }
+</script>
+</body></html>

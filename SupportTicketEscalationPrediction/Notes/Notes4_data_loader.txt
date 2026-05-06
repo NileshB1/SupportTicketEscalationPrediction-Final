@@ -1,0 +1,69 @@
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m escalation_prediction.src.data_loader
+2026-04-05 14:06:48,402 - WARNING - Skipping rtweera/customer_care_emails: DataLoader.load_huggingface_dataset() takes 1 positional argument but 2 were given
+2026-04-05 14:06:48,402 - WARNING - Skipping KameronB/synthetic-it-callcenter-tickets: DataLoader.load_huggingface_dataset() takes 1 positional argument but 2 were given
+2026-04-05 14:06:48,402 - WARNING - Skipping ajverse/customer-support-tickets-crm-dataset: 'DataLoader' object has no attribute 'download_kaggle_dataset'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\data_loader.py", line 200, in <module>
+    df = data_loader.load_all_datasets(raw_data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\data_loader.py", line 183, in load_all_datasets
+    raise ValueError("No datasets could be loaded")
+ValueError: No datasets could be loaded
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+
+
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>python -m src.data_loader
+2026-04-05 18:27:41,216 - INFO - Loading Huggingface dataset: rtweera/customer_care_emails
+2026-04-05 18:27:41,694 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/rtweera/customer_care_emails/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-05 18:27:41,719 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/rtweera/customer_care_emails/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8/README.md "HTTP/1.1 200 OK"
+2026-04-05 18:27:41,824 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/rtweera/customer_care_emails/resolve/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8/customer_care_emails.py "HTTP/1.1 404 Not Found"
+2026-04-05 18:27:42,237 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/rtweera/customer_care_emails/rtweera/customer_care_emails.py "HTTP/1.1 404 Not Found"
+2026-04-05 18:27:42,342 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/rtweera/customer_care_emails/revision/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8 "HTTP/1.1 200 OK"
+2026-04-05 18:27:42,452 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/rtweera/customer_care_emails/resolve/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-04-05 18:27:42,642 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=rtweera/customer_care_emails "HTTP/1.1 200 OK"
+2026-04-05 18:27:42,752 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/rtweera/customer_care_emails/tree/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+2026-04-05 18:27:42,852 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/rtweera/customer_care_emails/tree/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-04-05 18:27:43,025 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/rtweera/customer_care_emails/resolve/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-04-05 18:27:43,375 - INFO - #### Huggingface dataset:                                             subject                      sender  ... agent_efficiency customer_satisfaction
+0              Mercury Language Documentation Issue        john.doe@example.com  ...         very low                0.9043
+1          Re: Mercury Language Documentation Issue        support@aetheros.com  ...         very low                0.9043
+2          Re: Mercury Language Documentation Issue        john.doe@example.com  ...         very low                0.9043
+3          Re: Mercury Language Documentation Issue        john.doe@example.com  ...         very low                0.9043
+4  URGENT: User Permission Errors in Production API  kenneth77@davis-becker.com  ...         very low                0.6918
+
+[5 rows x 13 columns]
+2026-04-05 18:27:43,375 - INFO - Loaded 2259 rows from rtweera/customer_care_emails
+2026-04-05 18:27:43,380 - INFO - Loading Huggingface dataset: KameronB/synthetic-it-callcenter-tickets
+2026-04-05 18:27:43,491 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/KameronB/synthetic-it-callcenter-tickets/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-05 18:27:43,513 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/KameronB/synthetic-it-callcenter-tickets/11db8c3d64ffca2027afc49da9db9516a3254bbc/README.md "HTTP/1.1 200 OK"
+2026-04-05 18:27:43,685 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/KameronB/synthetic-it-callcenter-tickets/resolve/11db8c3d64ffca2027afc49da9db9516a3254bbc/synthetic-it-callcenter-tickets.py "HTTP/1.1 404 Not Found"
+2026-04-05 18:27:43,814 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/KameronB/synthetic-it-callcenter-tickets/KameronB/synthetic-it-callcenter-tickets.py "HTTP/1.1 404 Not Found"
+2026-04-05 18:27:43,916 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/KameronB/synthetic-it-callcenter-tickets/revision/11db8c3d64ffca2027afc49da9db9516a3254bbc "HTTP/1.1 200 OK"
+2026-04-05 18:27:44,022 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/KameronB/synthetic-it-callcenter-tickets/resolve/11db8c3d64ffca2027afc49da9db9516a3254bbc/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-04-05 18:27:44,137 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=KameronB/synthetic-it-callcenter-tickets "HTTP/1.1 200 OK"
+2026-04-05 18:27:44,276 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/KameronB/synthetic-it-callcenter-tickets/tree/11db8c3d64ffca2027afc49da9db9516a3254bbc/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+2026-04-05 18:27:44,402 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/KameronB/synthetic-it-callcenter-tickets/tree/11db8c3d64ffca2027afc49da9db9516a3254bbc?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-04-05 18:27:44,578 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/KameronB/synthetic-it-callcenter-tickets/resolve/11db8c3d64ffca2027afc49da9db9516a3254bbc/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-04-05 18:27:47,531 - INFO - #### Huggingface dataset:    Unnamed: 0       number      type  ...                                   poor_close_notes info_score_close_notes info_score_poor_close_notes
+0           0  TASK0049212   Request  ...                                      See worknotes                    0.8                         0.0
+1           1   INC0048604  Incident  ...                                           All set.                    0.9                         0.0
+2           2   INC0034238  Incident  ...                                           Resolved                    0.7                         0.0
+3           3   INC0068299  Incident  ...                    Ticket closed. Issue addressed.                    0.8                         0.0
+4           4    INC002060  Incident  ...  Issue resolved. User can access Aruba Networks...                    0.9                         0.1
+
+[5 rows x 24 columns]
+2026-04-05 18:27:47,531 - INFO - Loaded 27602 rows from KameronB/synthetic-it-callcenter-tickets
+2026-04-05 18:27:47,559 - ERROR - Failed to download from Kaggle dataset ajverse/customer-support-tickets-crm-dataset, Error KaggleApi.__init__() got an unexpected keyword argument 'config_dir'
+2026-04-05 18:27:47,560 - WARNING - Skipping ajverse/customer-support-tickets-crm-dataset: KaggleApi.__init__() got an unexpected keyword argument 'config_dir'
+2026-04-05 18:27:47,563 - INFO - #### Combined dataset has 29861 rows
+2026-04-05 18:27:47,583 - INFO - Saved raw combined data to data/processed\raw_combined.pkl
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>

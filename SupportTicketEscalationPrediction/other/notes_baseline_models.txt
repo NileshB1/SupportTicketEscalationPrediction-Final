@@ -1,0 +1,803 @@
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m venv .env
+
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>dir
+ Volume in drive D is DATA
+ Volume Serial Number is D496-FD8A
+
+ Directory of D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction
+
+05-04-2026  01:40    <DIR>          .
+04-04-2026  12:25    <DIR>          ..
+05-04-2026  01:40    <DIR>          .env
+05-04-2026  01:40    <DIR>          escalation_prediction
+               0 File(s)              0 bytes
+               4 Dir(s)  236,347,355,136 bytes free
+
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>.env\Scripts\activate.bat
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m escalation_prediction\src\baseline_models.py
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Scripts\python.exe: Error while finding module specification for 'escalation_prediction\\src\\baseline_models.py' (ModuleNotFoundError: No module named 'escalation_prediction\\src\\baseline_models'). Try using 'escalation_prediction\src\baseline_models' instead of 'escalation_prediction\src\baseline_models.py' as the module name.
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m escalation_prediction.src.baseline_models.py
+Traceback (most recent call last):
+  File "<frozen runpy>", line 189, in _run_module_as_main
+  File "<frozen runpy>", line 112, in _get_module_details
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 5, in <module>
+    import pandas as pd
+ModuleNotFoundError: No module named 'pandas'
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>cd escalation_prediction
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>dir
+ Volume in drive D is DATA
+ Volume Serial Number is D496-FD8A
+
+ Directory of D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction
+
+05-04-2026  01:40    <DIR>          .
+05-04-2026  01:40    <DIR>          ..
+03-04-2026  18:26    <DIR>          data
+03-04-2026  18:20    <DIR>          models
+03-04-2026  18:21    <DIR>          notebooks
+03-04-2026  18:23    <DIR>          other
+05-04-2026  01:43               134 requirements.txt
+03-04-2026  18:22    <DIR>          result
+05-04-2026  01:42    <DIR>          src
+               1 File(s)            134 bytes
+               8 Dir(s)  236,347,342,848 bytes free
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>pip install -r requirements.txt
+Collecting plotly (from -r requirements.txt (line 1))
+  Obtaining dependency information for plotly from https://files.pythonhosted.org/packages/52/d2/c6e44dba74f17c6216ce1b56044a9b93a929f1c2d5bdaff892512b260f5e/plotly-6.6.0-py3-none-any.whl.metadata
+  Downloading plotly-6.6.0-py3-none-any.whl.metadata (8.5 kB)
+Collecting numpy (from -r requirements.txt (line 2))
+  Obtaining dependency information for numpy from https://files.pythonhosted.org/packages/bd/63/05d193dbb4b5eec1eca73822d80da98b511f8328ad4ae3ca4caf0f4db91d/numpy-2.4.4-cp311-cp311-win_amd64.whl.metadata
+  Downloading numpy-2.4.4-cp311-cp311-win_amd64.whl.metadata (6.6 kB)
+Collecting imbalanced-learn (from -r requirements.txt (line 3))
+  Obtaining dependency information for imbalanced-learn from https://files.pythonhosted.org/packages/c7/b5/56f1ceb568676c0231d12b2fed17ebfd606dd1f627e7372aaed5dd56bd97/imbalanced_learn-0.14.1-py3-none-any.whl.metadata
+  Downloading imbalanced_learn-0.14.1-py3-none-any.whl.metadata (8.9 kB)
+Collecting matplotlib (from -r requirements.txt (line 4))
+  Obtaining dependency information for matplotlib from https://files.pythonhosted.org/packages/6f/d3/a4bbc01c237ab710a1f22b4da72f4ff6d77eb4c7735ea9811a94ae239067/matplotlib-3.10.8-cp311-cp311-win_amd64.whl.metadata
+  Downloading matplotlib-3.10.8-cp311-cp311-win_amd64.whl.metadata (52 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.8/52.8 kB 1.3 MB/s eta 0:00:00
+Collecting seaborn (from -r requirements.txt (line 5))
+  Obtaining dependency information for seaborn from https://files.pythonhosted.org/packages/83/11/00d3c3dfc25ad54e731d91449895a79e4bf2384dc3ac01809010ba88f6d5/seaborn-0.13.2-py3-none-any.whl.metadata
+  Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting xgboost (from -r requirements.txt (line 6))
+  Obtaining dependency information for xgboost from https://files.pythonhosted.org/packages/1f/3d/1661dd114a914a67e3f7ab66fa1382e7599c2a8c340f314ad30a3e2b4d08/xgboost-3.2.0-py3-none-win_amd64.whl.metadata
+  Downloading xgboost-3.2.0-py3-none-win_amd64.whl.metadata (2.1 kB)
+Collecting scikit-learn (from -r requirements.txt (line 7))
+  Obtaining dependency information for scikit-learn from https://files.pythonhosted.org/packages/89/3c/45c352094cfa60050bcbb967b1faf246b22e93cb459f2f907b600f2ceda5/scikit_learn-1.8.0-cp311-cp311-win_amd64.whl.metadata
+  Downloading scikit_learn-1.8.0-cp311-cp311-win_amd64.whl.metadata (11 kB)
+Collecting datasets (from -r requirements.txt (line 8))
+  Obtaining dependency information for datasets from https://files.pythonhosted.org/packages/b0/e5/247d094108e42ac26363ab8dc57f168840cf7c05774b40ffeb0d78868fcc/datasets-4.8.4-py3-none-any.whl.metadata
+  Downloading datasets-4.8.4-py3-none-any.whl.metadata (19 kB)
+Collecting kaggle (from -r requirements.txt (line 9))
+  Obtaining dependency information for kaggle from https://files.pythonhosted.org/packages/0c/b0/868ff7b15389a35fbe49769b383a683ade21deb16565e84b7ad45af976d3/kaggle-2.0.0-py3-none-any.whl.metadata
+  Downloading kaggle-2.0.0-py3-none-any.whl.metadata (15 kB)
+Collecting pandas (from -r requirements.txt (line 10))
+  Obtaining dependency information for pandas from https://files.pythonhosted.org/packages/44/a0/97a6339859d4acb2536efb24feb6708e82f7d33b2ed7e036f2983fcced82/pandas-3.0.2-cp311-cp311-win_amd64.whl.metadata
+  Downloading pandas-3.0.2-cp311-cp311-win_amd64.whl.metadata (19 kB)
+Collecting tqdm (from -r requirements.txt (line 11))
+  Obtaining dependency information for tqdm from https://files.pythonhosted.org/packages/16/e1/3079a9ff9b8e11b846c6ac5c8b5bfb7ff225eee721825310c91b3b50304f/tqdm-4.67.3-py3-none-any.whl.metadata
+  Downloading tqdm-4.67.3-py3-none-any.whl.metadata (57 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.7/57.7 kB 3.0 MB/s eta 0:00:00
+Collecting mlflow (from -r requirements.txt (line 12))
+  Obtaining dependency information for mlflow from https://files.pythonhosted.org/packages/c2/18/ca682e740b90d5a930981cd375f878a453a713741b5b7d9c0d9516552b5e/mlflow-3.10.1-py3-none-any.whl.metadata
+  Downloading mlflow-3.10.1-py3-none-any.whl.metadata (31 kB)
+Collecting nltk (from -r requirements.txt (line 13))
+  Obtaining dependency information for nltk from https://files.pythonhosted.org/packages/9d/91/04e965f8e717ba0ab4bdca5c112deeab11c9e750d94c4d4602f050295d39/nltk-3.9.4-py3-none-any.whl.metadata
+  Downloading nltk-3.9.4-py3-none-any.whl.metadata (3.2 kB)
+Collecting wordcloud (from -r requirements.txt (line 14))
+  Obtaining dependency information for wordcloud from https://files.pythonhosted.org/packages/45/70/0041966d469dec79036ad3962b83b007004b842531ee7c41bdba61310eb6/wordcloud-1.9.6-cp311-cp311-win_amd64.whl.metadata
+  Downloading wordcloud-1.9.6-cp311-cp311-win_amd64.whl.metadata (3.5 kB)
+Collecting narwhals>=1.15.1 (from plotly->-r requirements.txt (line 1))
+  Obtaining dependency information for narwhals>=1.15.1 from https://files.pythonhosted.org/packages/3f/c3/06490e98393dcb4d6ce2bf331a39335375c300afaef526897881fbeae6ab/narwhals-2.18.1-py3-none-any.whl.metadata
+  Downloading narwhals-2.18.1-py3-none-any.whl.metadata (14 kB)
+Collecting packaging (from plotly->-r requirements.txt (line 1))
+  Obtaining dependency information for packaging from https://files.pythonhosted.org/packages/b7/b9/c538f279a4e237a006a2c98387d081e9eb060d203d8ed34467cc0f0b9b53/packaging-26.0-py3-none-any.whl.metadata
+  Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting scipy<2,>=1.11.4 (from imbalanced-learn->-r requirements.txt (line 3))
+  Obtaining dependency information for scipy<2,>=1.11.4 from https://files.pythonhosted.org/packages/95/da/0d1df507cf574b3f224ccc3d45244c9a1d732c81dcb26b1e8a766ae271a8/scipy-1.17.1-cp311-cp311-win_amd64.whl.metadata
+  Downloading scipy-1.17.1-cp311-cp311-win_amd64.whl.metadata (60 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 61.0/61.0 kB ? eta 0:00:00
+Collecting sklearn-compat<0.2,>=0.1.5 (from imbalanced-learn->-r requirements.txt (line 3))
+  Obtaining dependency information for sklearn-compat<0.2,>=0.1.5 from https://files.pythonhosted.org/packages/53/60/08cb1b41563a0a8f26a72b8c5d1726986ab535fee67aa95541b2a2cc1dfa/sklearn_compat-0.1.5-py3-none-any.whl.metadata
+  Downloading sklearn_compat-0.1.5-py3-none-any.whl.metadata (20 kB)
+Collecting joblib<2,>=1.2.0 (from imbalanced-learn->-r requirements.txt (line 3))
+  Obtaining dependency information for joblib<2,>=1.2.0 from https://files.pythonhosted.org/packages/7b/91/984aca2ec129e2757d1e4e3c81c3fcda9d0f85b74670a094cc443d9ee949/joblib-1.5.3-py3-none-any.whl.metadata
+  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting threadpoolctl<4,>=2.0.0 (from imbalanced-learn->-r requirements.txt (line 3))
+  Obtaining dependency information for threadpoolctl<4,>=2.0.0 from https://files.pythonhosted.org/packages/32/d5/f9a850d79b0851d1d4ef6456097579a9005b31fea68726a4ae5f2d82ddd9/threadpoolctl-3.6.0-py3-none-any.whl.metadata
+  Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+Collecting contourpy>=1.0.1 (from matplotlib->-r requirements.txt (line 4))
+  Obtaining dependency information for contourpy>=1.0.1 from https://files.pythonhosted.org/packages/98/4b/9bd370b004b5c9d8045c6c33cf65bae018b27aca550a3f657cdc99acdbd8/contourpy-1.3.3-cp311-cp311-win_amd64.whl.metadata
+  Downloading contourpy-1.3.3-cp311-cp311-win_amd64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib->-r requirements.txt (line 4))
+  Obtaining dependency information for cycler>=0.10 from https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl.metadata
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib->-r requirements.txt (line 4))
+  Obtaining dependency information for fonttools>=4.22.0 from https://files.pythonhosted.org/packages/d3/97/bf54c5b3f2be34e1f143e6db838dfdc54f2ffa3e68c738934c82f3b2a08d/fonttools-4.62.1-cp311-cp311-win_amd64.whl.metadata
+  Downloading fonttools-4.62.1-cp311-cp311-win_amd64.whl.metadata (119 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 119.8/119.8 kB 6.8 MB/s eta 0:00:00
+Collecting kiwisolver>=1.3.1 (from matplotlib->-r requirements.txt (line 4))
+  Obtaining dependency information for kiwisolver>=1.3.1 from https://files.pythonhosted.org/packages/be/6c/28f17390b62b8f2f520e2915095b3c94d88681ecf0041e75389d9667f202/kiwisolver-1.5.0-cp311-cp311-win_amd64.whl.metadata
+  Downloading kiwisolver-1.5.0-cp311-cp311-win_amd64.whl.metadata (5.2 kB)
+Collecting pillow>=8 (from matplotlib->-r requirements.txt (line 4))
+  Obtaining dependency information for pillow>=8 from https://files.pythonhosted.org/packages/69/42/836b6f3cd7f3e5fa10a1f1a5420447c17966044c8fbf589cc0452d5502db/pillow-12.2.0-cp311-cp311-win_amd64.whl.metadata
+  Downloading pillow-12.2.0-cp311-cp311-win_amd64.whl.metadata (9.0 kB)
+Collecting pyparsing>=3 (from matplotlib->-r requirements.txt (line 4))
+  Obtaining dependency information for pyparsing>=3 from https://files.pythonhosted.org/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl.metadata
+  Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Collecting python-dateutil>=2.7 (from matplotlib->-r requirements.txt (line 4))
+  Obtaining dependency information for python-dateutil>=2.7 from https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting filelock (from datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for filelock from https://files.pythonhosted.org/packages/a4/a5/842ae8f0c08b61d6484b52f99a03510a3a72d23141942d216ebe81fefbce/filelock-3.25.2-py3-none-any.whl.metadata
+  Downloading filelock-3.25.2-py3-none-any.whl.metadata (2.0 kB)
+Collecting pyarrow>=21.0.0 (from datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for pyarrow>=21.0.0 from https://files.pythonhosted.org/packages/00/ca/db94101c187f3df742133ac837e93b1f269ebdac49427f8310ee40b6a58f/pyarrow-23.0.1-cp311-cp311-win_amd64.whl.metadata
+  Downloading pyarrow-23.0.1-cp311-cp311-win_amd64.whl.metadata (3.1 kB)
+Collecting dill<0.4.2,>=0.3.0 (from datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for dill<0.4.2,>=0.3.0 from https://files.pythonhosted.org/packages/1e/77/dc8c558f7593132cf8fefec57c4f60c83b16941c574ac5f619abb3ae7933/dill-0.4.1-py3-none-any.whl.metadata
+  Downloading dill-0.4.1-py3-none-any.whl.metadata (10 kB)
+Collecting requests>=2.32.2 (from datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for requests>=2.32.2 from https://files.pythonhosted.org/packages/d7/8e/7540e8a2036f79a125c1d2ebadf69ed7901608859186c856fa0388ef4197/requests-2.33.1-py3-none-any.whl.metadata
+  Downloading requests-2.33.1-py3-none-any.whl.metadata (4.8 kB)
+Collecting httpx<1.0.0 (from datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for httpx<1.0.0 from https://files.pythonhosted.org/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl.metadata
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting xxhash (from datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for xxhash from https://files.pythonhosted.org/packages/65/79/9d24d7f53819fe301b231044ea362ce64e86c74f6e8c8e51320de248b3e5/xxhash-3.6.0-cp311-cp311-win_amd64.whl.metadata
+  Downloading xxhash-3.6.0-cp311-cp311-win_amd64.whl.metadata (13 kB)
+Collecting multiprocess<0.70.20 (from datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for multiprocess<0.70.20 from https://files.pythonhosted.org/packages/86/c2/dec9722dc3474c164a0b6bcd9a7ed7da542c98af8cabce05374abab35edd/multiprocess-0.70.19-py311-none-any.whl.metadata
+  Downloading multiprocess-0.70.19-py311-none-any.whl.metadata (7.5 kB)
+Collecting fsspec[http]<=2026.2.0,>=2023.1.0 (from datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for fsspec[http]<=2026.2.0,>=2023.1.0 from https://files.pythonhosted.org/packages/e6/ab/fb21f4c939bb440104cc2b396d3be1d9b7a9fd3c6c2a53d98c45b3d7c954/fsspec-2026.2.0-py3-none-any.whl.metadata
+  Downloading fsspec-2026.2.0-py3-none-any.whl.metadata (10 kB)
+Collecting huggingface-hub<2.0,>=0.25.0 (from datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for huggingface-hub<2.0,>=0.25.0 from https://files.pythonhosted.org/packages/73/37/0d15d16150e1829f3e90962c99f28257f6de9e526a680b4c6f5acdb54fd2/huggingface_hub-1.9.0-py3-none-any.whl.metadata
+  Downloading huggingface_hub-1.9.0-py3-none-any.whl.metadata (14 kB)
+Collecting pyyaml>=5.1 (from datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for pyyaml>=5.1 from https://files.pythonhosted.org/packages/da/e3/ea007450a105ae919a72393cb06f122f288ef60bba2dc64b26e2646fa315/pyyaml-6.0.3-cp311-cp311-win_amd64.whl.metadata
+  Downloading pyyaml-6.0.3-cp311-cp311-win_amd64.whl.metadata (2.4 kB)
+Collecting bleach (from kaggle->-r requirements.txt (line 9))
+  Obtaining dependency information for bleach from https://files.pythonhosted.org/packages/cd/3a/577b549de0cc09d95f11087ee63c739bba856cd3952697eec4c4bb91350a/bleach-6.3.0-py3-none-any.whl.metadata
+  Downloading bleach-6.3.0-py3-none-any.whl.metadata (31 kB)
+Collecting kagglesdk<1.0,>=0.1.15 (from kaggle->-r requirements.txt (line 9))
+  Obtaining dependency information for kagglesdk<1.0,>=0.1.15 from https://files.pythonhosted.org/packages/69/6b/db30f17ad132391ac37a751fa45b32fd954a7ffa484fa3550eee9678334d/kagglesdk-0.1.16-py3-none-any.whl.metadata
+  Downloading kagglesdk-0.1.16-py3-none-any.whl.metadata (13 kB)
+Collecting protobuf (from kaggle->-r requirements.txt (line 9))
+  Obtaining dependency information for protobuf from https://files.pythonhosted.org/packages/4d/87/cb5e585192a22b8bd457df5a2c16a75ea0db9674c3a0a39fc9347d84e075/protobuf-7.34.1-cp310-abi3-win_amd64.whl.metadata
+  Downloading protobuf-7.34.1-cp310-abi3-win_amd64.whl.metadata (595 bytes)
+Collecting python-slugify (from kaggle->-r requirements.txt (line 9))
+  Obtaining dependency information for python-slugify from https://files.pythonhosted.org/packages/a4/62/02da182e544a51a5c3ccf4b03ab79df279f9c60c5e82d5e8bec7ca26ac11/python_slugify-8.0.4-py2.py3-none-any.whl.metadata
+  Downloading python_slugify-8.0.4-py2.py3-none-any.whl.metadata (8.5 kB)
+Collecting urllib3>=1.15.1 (from kaggle->-r requirements.txt (line 9))
+  Obtaining dependency information for urllib3>=1.15.1 from https://files.pythonhosted.org/packages/39/08/aaaad47bc4e9dc8c725e68f9d04865dbcb2052843ff09c97b08904852d84/urllib3-2.6.3-py3-none-any.whl.metadata
+  Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Collecting tzdata (from pandas->-r requirements.txt (line 10))
+  Obtaining dependency information for tzdata from https://files.pythonhosted.org/packages/b0/70/d460bd685a170790ec89317e9bd33047988e4bce507b831f5db771e142de/tzdata-2026.1-py2.py3-none-any.whl.metadata
+  Downloading tzdata-2026.1-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting colorama (from tqdm->-r requirements.txt (line 11))
+  Obtaining dependency information for colorama from https://files.pythonhosted.org/packages/d1/d6/3965ed04c63042e047cb6a3e6ed1a63a35087b6a609aa3a15ed8ac56c221/colorama-0.4.6-py2.py3-none-any.whl.metadata
+  Downloading colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting mlflow-skinny==3.10.1 (from mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for mlflow-skinny==3.10.1 from https://files.pythonhosted.org/packages/4b/52/17460157271e70b0d8444d27f8ad730ef7d95fb82fac59dc19f11519b921/mlflow_skinny-3.10.1-py3-none-any.whl.metadata
+  Downloading mlflow_skinny-3.10.1-py3-none-any.whl.metadata (32 kB)
+Collecting mlflow-tracing==3.10.1 (from mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for mlflow-tracing==3.10.1 from https://files.pythonhosted.org/packages/b6/9a/7ac1db2ed7b5e21c50fadf925a53f0c77452a8a855ee4a119b084c2fa5d3/mlflow_tracing-3.10.1-py3-none-any.whl.metadata
+  Downloading mlflow_tracing-3.10.1-py3-none-any.whl.metadata (19 kB)
+Collecting Flask-CORS<7 (from mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for Flask-CORS<7 from https://files.pythonhosted.org/packages/4f/af/72ad54402e599152de6d067324c46fe6a4f531c7c65baf7e96c63db55eaf/flask_cors-6.0.2-py3-none-any.whl.metadata
+  Downloading flask_cors-6.0.2-py3-none-any.whl.metadata (5.3 kB)
+Collecting Flask<4 (from mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for Flask<4 from https://files.pythonhosted.org/packages/7f/9c/34f6962f9b9e9c71f6e5ed806e0d0ff03c9d1b0b2340088a0cf4bce09b18/flask-3.1.3-py3-none-any.whl.metadata
+  Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+Collecting alembic!=1.10.0,<2 (from mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for alembic!=1.10.0,<2 from https://files.pythonhosted.org/packages/d2/29/6533c317b74f707ea28f8d633734dbda2119bbadfc61b2f3640ba835d0f7/alembic-1.18.4-py3-none-any.whl.metadata
+  Downloading alembic-1.18.4-py3-none-any.whl.metadata (7.2 kB)
+Collecting cryptography<47,>=43.0.0 (from mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for cryptography<47,>=43.0.0 from https://files.pythonhosted.org/packages/c3/f8/c9bcbf0d3e6ad288b9d9aa0b1dee04b063d19e8c4f871855a03ab3a297ab/cryptography-46.0.6-cp311-abi3-win_amd64.whl.metadata
+  Downloading cryptography-46.0.6-cp311-abi3-win_amd64.whl.metadata (5.7 kB)
+Collecting docker<8,>=4.0.0 (from mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for docker<8,>=4.0.0 from https://files.pythonhosted.org/packages/e3/26/57c6fb270950d476074c087527a558ccb6f4436657314bfb6cdf484114c4/docker-7.1.0-py3-none-any.whl.metadata
+  Downloading docker-7.1.0-py3-none-any.whl.metadata (3.8 kB)
+Collecting graphene<4 (from mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for graphene<4 from https://files.pythonhosted.org/packages/66/e0/61d8e98007182e6b2aca7cf65904721fb2e4bce0192272ab9cb6f69d8812/graphene-3.4.3-py2.py3-none-any.whl.metadata
+  Downloading graphene-3.4.3-py2.py3-none-any.whl.metadata (6.9 kB)
+Collecting huey<3,>=2.5.4 (from mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for huey<3,>=2.5.4 from https://files.pythonhosted.org/packages/1a/34/fae9ac8f1c3a552fd3f7ff652b94c78d219dedc5fce0c0a4232457760a00/huey-2.6.0-py3-none-any.whl.metadata
+  Downloading huey-2.6.0-py3-none-any.whl.metadata (4.3 kB)
+Collecting pandas (from -r requirements.txt (line 10))
+  Obtaining dependency information for pandas from https://files.pythonhosted.org/packages/8e/59/712db1d7040520de7a4965df15b774348980e6df45c129b8c64d0dbe74ef/pandas-2.3.3-cp311-cp311-win_amd64.whl.metadata
+  Downloading pandas-2.3.3-cp311-cp311-win_amd64.whl.metadata (19 kB)
+Collecting skops<1 (from mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for skops<1 from https://files.pythonhosted.org/packages/04/e8/6a2b2030f0689f894432b9c2f0357f2f3286b2a00474827e04b8fe9eea13/skops-0.13.0-py3-none-any.whl.metadata
+  Downloading skops-0.13.0-py3-none-any.whl.metadata (5.6 kB)
+Collecting sqlalchemy<3,>=1.4.0 (from mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for sqlalchemy<3,>=1.4.0 from https://files.pythonhosted.org/packages/c4/59/55a6d627d04b6ebb290693681d7683c7da001eddf90b60cfcc41ee907978/sqlalchemy-2.0.49-cp311-cp311-win_amd64.whl.metadata
+  Downloading sqlalchemy-2.0.49-cp311-cp311-win_amd64.whl.metadata (9.8 kB)
+Collecting waitress<4 (from mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for waitress<4 from https://files.pythonhosted.org/packages/8d/57/a27182528c90ef38d82b636a11f606b0cbb0e17588ed205435f8affe3368/waitress-3.0.2-py3-none-any.whl.metadata
+  Downloading waitress-3.0.2-py3-none-any.whl.metadata (5.8 kB)
+Collecting cachetools<8,>=5.0.0 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for cachetools<8,>=5.0.0 from https://files.pythonhosted.org/packages/06/f3/39cf3367b8107baa44f861dc802cbf16263c945b62d8265d36034fc07bea/cachetools-7.0.5-py3-none-any.whl.metadata
+  Downloading cachetools-7.0.5-py3-none-any.whl.metadata (5.6 kB)
+Collecting click<9,>=7.0 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for click<9,>=7.0 from https://files.pythonhosted.org/packages/e4/20/71885d8b97d4f3dde17b1fdb92dbd4908b00541c5a3379787137285f602e/click-8.3.2-py3-none-any.whl.metadata
+  Downloading click-8.3.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting cloudpickle<4 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for cloudpickle<4 from https://files.pythonhosted.org/packages/88/39/799be3f2f0f38cc727ee3b4f1445fe6d5e4133064ec2e4115069418a5bb6/cloudpickle-3.1.2-py3-none-any.whl.metadata
+  Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+Collecting databricks-sdk<1,>=0.20.0 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for databricks-sdk<1,>=0.20.0 from https://files.pythonhosted.org/packages/02/8c/d082bd5f72d7613524d5b35dfe1f71732b2246be2704fad68cd0e3fdd020/databricks_sdk-0.102.0-py3-none-any.whl.metadata
+  Downloading databricks_sdk-0.102.0-py3-none-any.whl.metadata (40 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.6/40.6 kB ? eta 0:00:00
+Collecting fastapi<1 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for fastapi<1 from https://files.pythonhosted.org/packages/84/a4/5caa2de7f917a04ada20018eccf60d6cc6145b0199d55ca3711b0fc08312/fastapi-0.135.3-py3-none-any.whl.metadata
+  Downloading fastapi-0.135.3-py3-none-any.whl.metadata (28 kB)
+Collecting gitpython<4,>=3.1.9 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for gitpython<4,>=3.1.9 from https://files.pythonhosted.org/packages/6a/09/e21df6aef1e1ffc0c816f0522ddc3f6dcded766c3261813131c78a704470/gitpython-3.1.46-py3-none-any.whl.metadata
+  Downloading gitpython-3.1.46-py3-none-any.whl.metadata (13 kB)
+Collecting importlib_metadata!=4.7.0,<9,>=3.7.0 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for importlib_metadata!=4.7.0,<9,>=3.7.0 from https://files.pythonhosted.org/packages/7d/f9/97f2ca8bb3ec6e4b1d64f983ebe98b9a192faddff67fac3d6303a537e670/importlib_metadata-8.9.0-py3-none-any.whl.metadata
+  Downloading importlib_metadata-8.9.0-py3-none-any.whl.metadata (4.5 kB)
+Collecting opentelemetry-api<3,>=1.9.0 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for opentelemetry-api<3,>=1.9.0 from https://files.pythonhosted.org/packages/5f/bf/93795954016c522008da367da292adceed71cca6ee1717e1d64c83089099/opentelemetry_api-1.40.0-py3-none-any.whl.metadata
+  Downloading opentelemetry_api-1.40.0-py3-none-any.whl.metadata (1.5 kB)
+Collecting opentelemetry-proto<3,>=1.9.0 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for opentelemetry-proto<3,>=1.9.0 from https://files.pythonhosted.org/packages/b9/b2/189b2577dde745b15625b3214302605b1353436219d42b7912e77fa8dc24/opentelemetry_proto-1.40.0-py3-none-any.whl.metadata
+  Downloading opentelemetry_proto-1.40.0-py3-none-any.whl.metadata (2.4 kB)
+Collecting opentelemetry-sdk<3,>=1.9.0 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for opentelemetry-sdk<3,>=1.9.0 from https://files.pythonhosted.org/packages/2c/c5/6a852903d8bfac758c6dc6e9a68b015d3c33f2f1be5e9591e0f4b69c7e0a/opentelemetry_sdk-1.40.0-py3-none-any.whl.metadata
+  Downloading opentelemetry_sdk-1.40.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting protobuf (from kaggle->-r requirements.txt (line 9))
+  Obtaining dependency information for protobuf from https://files.pythonhosted.org/packages/76/5d/683efcd4798e0030c1bab27374fd13a89f7c2515fb1f3123efdfaa5eab57/protobuf-6.33.6-cp310-abi3-win_amd64.whl.metadata
+  Downloading protobuf-6.33.6-cp310-abi3-win_amd64.whl.metadata (593 bytes)
+Collecting pydantic<3,>=2.0.0 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for pydantic<3,>=2.0.0 from https://files.pythonhosted.org/packages/5a/87/b70ad306ebb6f9b585f114d0ac2137d792b48be34d732d60e597c2f8465a/pydantic-2.12.5-py3-none-any.whl.metadata
+  Downloading pydantic-2.12.5-py3-none-any.whl.metadata (90 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.6/90.6 kB ? eta 0:00:00
+Collecting python-dotenv<2,>=0.19.0 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for python-dotenv<2,>=0.19.0 from https://files.pythonhosted.org/packages/0b/d7/1959b9648791274998a9c3526f6d0ec8fd2233e4d4acce81bbae76b44b2a/python_dotenv-1.2.2-py3-none-any.whl.metadata
+  Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+Collecting sqlparse<1,>=0.4.0 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for sqlparse<1,>=0.4.0 from https://files.pythonhosted.org/packages/49/4b/359f28a903c13438ef59ebeee215fb25da53066db67b305c125f1c6d2a25/sqlparse-0.5.5-py3-none-any.whl.metadata
+  Downloading sqlparse-0.5.5-py3-none-any.whl.metadata (4.7 kB)
+Collecting typing-extensions<5,>=4.0.0 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for typing-extensions<5,>=4.0.0 from https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl.metadata
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting uvicorn<1 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for uvicorn<1 from https://files.pythonhosted.org/packages/55/df/0cf5b0c451602748fdc7a702d4667f6e209bf96aa6e3160d754234445f2a/uvicorn-0.43.0-py3-none-any.whl.metadata
+  Downloading uvicorn-0.43.0-py3-none-any.whl.metadata (6.7 kB)
+Collecting pytz>=2020.1 (from pandas->-r requirements.txt (line 10))
+  Obtaining dependency information for pytz>=2020.1 from https://files.pythonhosted.org/packages/10/99/781fe0c827be2742bcc775efefccb3b048a3a9c6ce9aec0cbf4a101677e5/pytz-2026.1.post1-py2.py3-none-any.whl.metadata
+  Downloading pytz-2026.1.post1-py2.py3-none-any.whl.metadata (22 kB)
+Collecting regex>=2021.8.3 (from nltk->-r requirements.txt (line 13))
+  Obtaining dependency information for regex>=2021.8.3 from https://files.pythonhosted.org/packages/33/80/74e13262460530c3097ff343a17de9a34d040a5dc4de9cf3a8241faab51c/regex-2026.4.4-cp311-cp311-win_amd64.whl.metadata
+  Downloading regex-2026.4.4-cp311-cp311-win_amd64.whl.metadata (41 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.5/41.5 kB 2.0 MB/s eta 0:00:00
+Collecting Mako (from alembic!=1.10.0,<2->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for Mako from https://files.pythonhosted.org/packages/87/fb/99f81ac72ae23375f22b7afdb7642aba97c00a713c217124420147681a2f/mako-1.3.10-py3-none-any.whl.metadata
+  Downloading mako-1.3.10-py3-none-any.whl.metadata (2.9 kB)
+Collecting cffi>=2.0.0 (from cryptography<47,>=43.0.0->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for cffi>=2.0.0 from https://files.pythonhosted.org/packages/ae/8f/dc5531155e7070361eb1b7e4c1a9d896d0cb21c49f807a6c03fd63fc877e/cffi-2.0.0-cp311-cp311-win_amd64.whl.metadata
+  Downloading cffi-2.0.0-cp311-cp311-win_amd64.whl.metadata (2.6 kB)
+Collecting pywin32>=304 (from docker<8,>=4.0.0->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for pywin32>=304 from https://files.pythonhosted.org/packages/51/8f/9bb81dd5bb77d22243d33c8397f09377056d5c687aa6d4042bea7fbf8364/pywin32-311-cp311-cp311-win_amd64.whl.metadata
+  Downloading pywin32-311-cp311-cp311-win_amd64.whl.metadata (10 kB)
+Collecting blinker>=1.9.0 (from Flask<4->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for blinker>=1.9.0 from https://files.pythonhosted.org/packages/10/cb/f2ad4230dc2eb1a74edf38f1a38b9b52277f75bef262d8908e60d957e13c/blinker-1.9.0-py3-none-any.whl.metadata
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting itsdangerous>=2.2.0 (from Flask<4->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for itsdangerous>=2.2.0 from https://files.pythonhosted.org/packages/04/96/92447566d16df59b2a776c0fb82dbc4d9e07cd95062562af01e408583fc4/itsdangerous-2.2.0-py3-none-any.whl.metadata
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting jinja2>=3.1.2 (from Flask<4->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for jinja2>=3.1.2 from https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl.metadata
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting markupsafe>=2.1.1 (from Flask<4->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for markupsafe>=2.1.1 from https://files.pythonhosted.org/packages/83/8a/4414c03d3f891739326e1783338e48fb49781cc915b2e0ee052aa490d586/markupsafe-3.0.3-cp311-cp311-win_amd64.whl.metadata
+  Downloading markupsafe-3.0.3-cp311-cp311-win_amd64.whl.metadata (2.8 kB)
+Collecting werkzeug>=3.1.0 (from Flask<4->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for werkzeug>=3.1.0 from https://files.pythonhosted.org/packages/93/8c/2e650f2afeb7ee576912636c23ddb621c91ac6a98e66dc8d29c3c69446e1/werkzeug-3.1.8-py3-none-any.whl.metadata
+  Downloading werkzeug-3.1.8-py3-none-any.whl.metadata (4.0 kB)
+Collecting aiohttp!=4.0.0a0,!=4.0.0a1 (from fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for aiohttp!=4.0.0a0,!=4.0.0a1 from https://files.pythonhosted.org/packages/c0/43/8c7163a596dab4f8be12c190cf467a1e07e4734cf90eebb39f7f5d53fc6a/aiohttp-3.13.5-cp311-cp311-win_amd64.whl.metadata
+  Downloading aiohttp-3.13.5-cp311-cp311-win_amd64.whl.metadata (8.4 kB)
+Collecting graphql-core<3.3,>=3.1 (from graphene<4->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for graphql-core<3.3,>=3.1 from https://files.pythonhosted.org/packages/86/41/cb887d9afc5dabd78feefe6ccbaf83ff423c206a7a1b7aeeac05120b2125/graphql_core-3.2.8-py3-none-any.whl.metadata
+  Downloading graphql_core-3.2.8-py3-none-any.whl.metadata (11 kB)
+Collecting graphql-relay<3.3,>=3.1 (from graphene<4->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for graphql-relay<3.3,>=3.1 from https://files.pythonhosted.org/packages/74/16/a4cf06adbc711bd364a73ce043b0b08d8fa5aae3df11b6ee4248bcdad2e0/graphql_relay-3.2.0-py3-none-any.whl.metadata
+  Downloading graphql_relay-3.2.0-py3-none-any.whl.metadata (12 kB)
+Collecting anyio (from httpx<1.0.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for anyio from https://files.pythonhosted.org/packages/da/42/e921fccf5015463e32a3cf6ee7f980a6ed0f395ceeaa45060b61d86486c2/anyio-4.13.0-py3-none-any.whl.metadata
+  Downloading anyio-4.13.0-py3-none-any.whl.metadata (4.5 kB)
+Collecting certifi (from httpx<1.0.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for certifi from https://files.pythonhosted.org/packages/9a/3c/c17fb3ca2d9c3acff52e30b309f538586f9f5b9c9cf454f3845fc9af4881/certifi-2026.2.25-py3-none-any.whl.metadata
+  Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+Collecting httpcore==1.* (from httpx<1.0.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for httpcore==1.* from https://files.pythonhosted.org/packages/7e/f5/f66802a942d491edb555dd61e3a9961140fd64c90bce1eafd741609d334d/httpcore-1.0.9-py3-none-any.whl.metadata
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting idna (from httpx<1.0.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for idna from https://files.pythonhosted.org/packages/0e/61/66938bbb5fc52dbdf84594873d5b51fb1f7c7794e9c0f5bd885f30bc507b/idna-3.11-py3-none-any.whl.metadata
+  Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx<1.0.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for h11>=0.16 from https://files.pythonhosted.org/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl.metadata
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting hf-xet<2.0.0,>=1.4.3 (from huggingface-hub<2.0,>=0.25.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for hf-xet<2.0.0,>=1.4.3 from https://files.pythonhosted.org/packages/8a/21/75a6c175b4e79662ad8e62f46a40ce341d8d6b206b06b4320d07d55b188c/hf_xet-1.4.3-cp37-abi3-win_amd64.whl.metadata
+  Downloading hf_xet-1.4.3-cp37-abi3-win_amd64.whl.metadata (4.9 kB)
+Collecting typer (from huggingface-hub<2.0,>=0.25.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for typer from https://files.pythonhosted.org/packages/4a/91/48db081e7a63bb37284f9fbcefda7c44c277b18b0e13fbc36ea2335b71e6/typer-0.24.1-py3-none-any.whl.metadata
+  Downloading typer-0.24.1-py3-none-any.whl.metadata (16 kB)
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib->-r requirements.txt (line 4))
+  Obtaining dependency information for six>=1.5 from https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl.metadata
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting charset_normalizer<4,>=2 (from requests>=2.32.2->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for charset_normalizer<4,>=2 from https://files.pythonhosted.org/packages/20/d9/5f67790f06b735d7c7637171bbfd89882ad67201891b7275e51116ed8207/charset_normalizer-3.4.7-cp311-cp311-win_amd64.whl.metadata
+  Downloading charset_normalizer-3.4.7-cp311-cp311-win_amd64.whl.metadata (41 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.7/41.7 kB 2.0 MB/s eta 0:00:00
+Collecting prettytable>=3.9 (from skops<1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for prettytable>=3.9 from https://files.pythonhosted.org/packages/ee/8c/83087ebc47ab0396ce092363001fa37c17153119ee282700c0713a195853/prettytable-3.17.0-py3-none-any.whl.metadata
+  Downloading prettytable-3.17.0-py3-none-any.whl.metadata (34 kB)
+Collecting greenlet>=1 (from sqlalchemy<3,>=1.4.0->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for greenlet>=1 from https://files.pythonhosted.org/packages/f1/3a/efb2cf697fbccdf75b24e2c18025e7dfa54c4f31fab75c51d0fe79942cef/greenlet-3.3.2-cp311-cp311-win_amd64.whl.metadata
+  Downloading greenlet-3.3.2-cp311-cp311-win_amd64.whl.metadata (3.8 kB)
+Collecting webencodings (from bleach->kaggle->-r requirements.txt (line 9))
+  Obtaining dependency information for webencodings from https://files.pythonhosted.org/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl.metadata
+  Downloading webencodings-0.5.1-py2.py3-none-any.whl.metadata (2.1 kB)
+Collecting text-unidecode>=1.3 (from python-slugify->kaggle->-r requirements.txt (line 9))
+  Obtaining dependency information for text-unidecode>=1.3 from https://files.pythonhosted.org/packages/a6/a5/c0b6468d3824fe3fde30dbb5e1f687b291608f9473681bbf7dabbf5a87d7/text_unidecode-1.3-py2.py3-none-any.whl.metadata
+  Downloading text_unidecode-1.3-py2.py3-none-any.whl.metadata (2.4 kB)
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for aiohappyeyeballs>=2.5.0 from https://files.pythonhosted.org/packages/0f/15/5bf3b99495fb160b63f95972b81750f18f7f4e02ad051373b669d17d44f2/aiohappyeyeballs-2.6.1-py3-none-any.whl.metadata
+  Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl.metadata (5.9 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for aiosignal>=1.4.0 from https://files.pythonhosted.org/packages/fb/76/641ae371508676492379f16e2fa48f4e2c11741bd63c48be4b12a6b09cba/aiosignal-1.4.0-py3-none-any.whl.metadata
+  Downloading aiosignal-1.4.0-py3-none-any.whl.metadata (3.7 kB)
+Collecting attrs>=17.3.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for attrs>=17.3.0 from https://files.pythonhosted.org/packages/64/b4/17d4b0b2a2dc85a6df63d1157e028ed19f90d4cd97c36717afef2bc2f395/attrs-26.1.0-py3-none-any.whl.metadata
+  Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+Collecting frozenlist>=1.1.1 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for frozenlist>=1.1.1 from https://files.pythonhosted.org/packages/0a/f5/603d0d6a02cfd4c8f2a095a54672b3cf967ad688a60fb9faf04fc4887f65/frozenlist-1.8.0-cp311-cp311-win_amd64.whl.metadata
+  Downloading frozenlist-1.8.0-cp311-cp311-win_amd64.whl.metadata (21 kB)
+Collecting multidict<7.0,>=4.5 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for multidict<7.0,>=4.5 from https://files.pythonhosted.org/packages/c9/68/f16a3a8ba6f7b6dc92a1f19669c0810bd2c43fc5a02da13b1cbf8e253845/multidict-6.7.1-cp311-cp311-win_amd64.whl.metadata
+  Downloading multidict-6.7.1-cp311-cp311-win_amd64.whl.metadata (5.5 kB)
+Collecting propcache>=0.2.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for propcache>=0.2.0 from https://files.pythonhosted.org/packages/f4/78/6cce448e2098e9f3bfc91bb877f06aa24b6ccace872e39c53b2f707c4648/propcache-0.4.1-cp311-cp311-win_amd64.whl.metadata
+  Downloading propcache-0.4.1-cp311-cp311-win_amd64.whl.metadata (14 kB)
+Collecting yarl<2.0,>=1.17.0 (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2026.2.0,>=2023.1.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for yarl<2.0,>=1.17.0 from https://files.pythonhosted.org/packages/93/22/b85eca6fa2ad9491af48c973e4c8cf6b103a73dbb271fe3346949449fca0/yarl-1.23.0-cp311-cp311-win_amd64.whl.metadata
+  Downloading yarl-1.23.0-cp311-cp311-win_amd64.whl.metadata (82 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 82.2/82.2 kB ? eta 0:00:00
+Collecting pycparser (from cffi>=2.0.0->cryptography<47,>=43.0.0->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for pycparser from https://files.pythonhosted.org/packages/0c/c3/44f3fbbfa403ea2a7c779186dc20772604442dde72947e7d01069cbe98e3/pycparser-3.0-py3-none-any.whl.metadata
+  Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Collecting google-auth~=2.0 (from databricks-sdk<1,>=0.20.0->mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for google-auth~=2.0 from https://files.pythonhosted.org/packages/e9/eb/c6c2478d8a8d633460be40e2a8a6f8f429171997a35a96f81d3b680dec83/google_auth-2.49.1-py3-none-any.whl.metadata
+  Downloading google_auth-2.49.1-py3-none-any.whl.metadata (6.2 kB)
+Collecting starlette>=0.46.0 (from fastapi<1->mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for starlette>=0.46.0 from https://files.pythonhosted.org/packages/0b/c9/584bc9651441b4ba60cc4d557d8a547b5aff901af35bda3a4ee30c819b82/starlette-1.0.0-py3-none-any.whl.metadata
+  Downloading starlette-1.0.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi<1->mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for typing-inspection>=0.4.2 from https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl.metadata
+  Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi<1->mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for annotated-doc>=0.0.2 from https://files.pythonhosted.org/packages/1e/d3/26bf1008eb3d2daa8ef4cacc7f3bfdc11818d111f7e2d0201bc6e3b49d45/annotated_doc-0.0.4-py3-none-any.whl.metadata
+  Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+Collecting gitdb<5,>=4.0.1 (from gitpython<4,>=3.1.9->mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for gitdb<5,>=4.0.1 from https://files.pythonhosted.org/packages/a0/61/5c78b91c3143ed5c14207f463aecfc8f9dbb5092fb2869baf37c273b2705/gitdb-4.0.12-py3-none-any.whl.metadata
+  Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+Collecting zipp>=3.20 (from importlib_metadata!=4.7.0,<9,>=3.7.0->mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for zipp>=3.20 from https://files.pythonhosted.org/packages/2e/54/647ade08bf0db230bfea292f893923872fd20be6ac6f53b2b936ba839d75/zipp-3.23.0-py3-none-any.whl.metadata
+  Downloading zipp-3.23.0-py3-none-any.whl.metadata (3.6 kB)
+Collecting importlib_metadata!=4.7.0,<9,>=3.7.0 (from mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for importlib_metadata!=4.7.0,<9,>=3.7.0 from https://files.pythonhosted.org/packages/fa/5e/f8e9a1d23b9c20a551a8a02ea3637b4642e22c2626e3a13a9a29cdea99eb/importlib_metadata-8.7.1-py3-none-any.whl.metadata
+  Downloading importlib_metadata-8.7.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting opentelemetry-semantic-conventions==0.61b0 (from opentelemetry-sdk<3,>=1.9.0->mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for opentelemetry-semantic-conventions==0.61b0 from https://files.pythonhosted.org/packages/b2/37/cc6a55e448deaa9b27377d087da8615a3416d8ad523d5960b78dbeadd02a/opentelemetry_semantic_conventions-0.61b0-py3-none-any.whl.metadata
+  Downloading opentelemetry_semantic_conventions-0.61b0-py3-none-any.whl.metadata (2.5 kB)
+Collecting wcwidth (from prettytable>=3.9->skops<1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for wcwidth from https://files.pythonhosted.org/packages/68/5a/199c59e0a824a3db2b89c5d2dade7ab5f9624dbf6448dc291b46d5ec94d3/wcwidth-0.6.0-py3-none-any.whl.metadata
+  Downloading wcwidth-0.6.0-py3-none-any.whl.metadata (30 kB)
+Collecting annotated-types>=0.6.0 (from pydantic<3,>=2.0.0->mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for annotated-types>=0.6.0 from https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl.metadata
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.41.5 (from pydantic<3,>=2.0.0->mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for pydantic-core==2.41.5 from https://files.pythonhosted.org/packages/11/66/f14d1d978ea94d1bc21fc98fcf570f9542fe55bfcc40269d4e1a21c19bf7/pydantic_core-2.41.5-cp311-cp311-win_amd64.whl.metadata
+  Downloading pydantic_core-2.41.5-cp311-cp311-win_amd64.whl.metadata (7.4 kB)
+Collecting shellingham>=1.3.0 (from typer->huggingface-hub<2.0,>=0.25.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for shellingham>=1.3.0 from https://files.pythonhosted.org/packages/e0/f9/0595336914c5619e5f28a1fb793285925a8cd4b432c9da0a987836c7f822/shellingham-1.5.4-py2.py3-none-any.whl.metadata
+  Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting rich>=12.3.0 (from typer->huggingface-hub<2.0,>=0.25.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for rich>=12.3.0 from https://files.pythonhosted.org/packages/14/25/b208c5683343959b670dc001595f2f3737e051da617f66c31f7c4fa93abc/rich-14.3.3-py3-none-any.whl.metadata
+  Downloading rich-14.3.3-py3-none-any.whl.metadata (18 kB)
+Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython<4,>=3.1.9->mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for smmap<6,>=3.0.1 from https://files.pythonhosted.org/packages/c1/d4/59e74daffcb57a07668852eeeb6035af9f32cbfd7a1d2511f17d2fe6a738/smmap-5.0.3-py3-none-any.whl.metadata
+  Downloading smmap-5.0.3-py3-none-any.whl.metadata (4.6 kB)
+Collecting pyasn1-modules>=0.2.1 (from google-auth~=2.0->databricks-sdk<1,>=0.20.0->mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for pyasn1-modules>=0.2.1 from https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl.metadata
+  Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=12.3.0->typer->huggingface-hub<2.0,>=0.25.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for markdown-it-py>=2.2.0 from https://files.pythonhosted.org/packages/94/54/e7d793b573f298e1c9013b8c4dade17d481164aa517d1d7148619c2cedbf/markdown_it_py-4.0.0-py3-none-any.whl.metadata
+  Downloading markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=12.3.0->typer->huggingface-hub<2.0,>=0.25.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for pygments<3.0.0,>=2.13.0 from https://files.pythonhosted.org/packages/f4/7e/a72dd26f3b0f4f2bf1dd8923c85f7ceb43172af56d63c7383eb62b332364/pygments-2.20.0-py3-none-any.whl.metadata
+  Downloading pygments-2.20.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=12.3.0->typer->huggingface-hub<2.0,>=0.25.0->datasets->-r requirements.txt (line 8))
+  Obtaining dependency information for mdurl~=0.1 from https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl.metadata
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth~=2.0->databricks-sdk<1,>=0.20.0->mlflow-skinny==3.10.1->mlflow->-r requirements.txt (line 12))
+  Obtaining dependency information for pyasn1<0.7.0,>=0.6.1 from https://files.pythonhosted.org/packages/5d/a0/7d793dce3fa811fe047d6ae2431c672364b462850c6235ae306c0efd025f/pyasn1-0.6.3-py3-none-any.whl.metadata
+  Downloading pyasn1-0.6.3-py3-none-any.whl.metadata (8.4 kB)
+Downloading plotly-6.6.0-py3-none-any.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 33.3 MB/s eta 0:00:00
+Downloading numpy-2.4.4-cp311-cp311-win_amd64.whl (12.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.6/12.6 MB 81.8 MB/s eta 0:00:00
+Downloading imbalanced_learn-0.14.1-py3-none-any.whl (235 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 235.4/235.4 kB 14.1 MB/s eta 0:00:00
+Downloading matplotlib-3.10.8-cp311-cp311-win_amd64.whl (8.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 65.0 MB/s eta 0:00:00
+Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 294.9/294.9 kB ? eta 0:00:00
+Downloading xgboost-3.2.0-py3-none-win_amd64.whl (101.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 101.7/101.7 MB 28.4 MB/s eta 0:00:00
+Downloading scikit_learn-1.8.0-cp311-cp311-win_amd64.whl (8.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 64.6 MB/s eta 0:00:00
+Downloading datasets-4.8.4-py3-none-any.whl (526 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 527.0/527.0 kB 32.3 MB/s eta 0:00:00
+Downloading kaggle-2.0.0-py3-none-any.whl (75 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 75.5/75.5 kB ? eta 0:00:00
+Downloading tqdm-4.67.3-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.4/78.4 kB 4.3 MB/s eta 0:00:00
+Downloading mlflow-3.10.1-py3-none-any.whl (10.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 72.0 MB/s eta 0:00:00
+Downloading mlflow_skinny-3.10.1-py3-none-any.whl (3.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 63.3 MB/s eta 0:00:00
+Downloading mlflow_tracing-3.10.1-py3-none-any.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 47.9 MB/s eta 0:00:00
+Downloading pandas-2.3.3-cp311-cp311-win_amd64.whl (11.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.3/11.3 MB 93.8 MB/s eta 0:00:00
+Downloading nltk-3.9.4-py3-none-any.whl (1.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.6/1.6 MB 49.7 MB/s eta 0:00:00
+Downloading wordcloud-1.9.6-cp311-cp311-win_amd64.whl (306 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 306.1/306.1 kB 18.5 MB/s eta 0:00:00
+Downloading alembic-1.18.4-py3-none-any.whl (263 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 263.9/263.9 kB ? eta 0:00:00
+Downloading click-8.3.2-py3-none-any.whl (108 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 108.4/108.4 kB ? eta 0:00:00
+Downloading contourpy-1.3.3-cp311-cp311-win_amd64.whl (225 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 225.2/225.2 kB 13.4 MB/s eta 0:00:00
+Downloading cryptography-46.0.6-cp311-abi3-win_amd64.whl (3.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.5/3.5 MB 73.9 MB/s eta 0:00:00
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading dill-0.4.1-py3-none-any.whl (120 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 120.0/120.0 kB ? eta 0:00:00
+Downloading docker-7.1.0-py3-none-any.whl (147 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 147.8/147.8 kB ? eta 0:00:00
+Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 103.4/103.4 kB ? eta 0:00:00
+Downloading flask_cors-6.0.2-py3-none-any.whl (13 kB)
+Downloading fonttools-4.62.1-cp311-cp311-win_amd64.whl (2.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 75.3 MB/s eta 0:00:00
+Downloading graphene-3.4.3-py2.py3-none-any.whl (114 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.9/114.9 kB 6.5 MB/s eta 0:00:00
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB ? eta 0:00:00
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 4.6 MB/s eta 0:00:00
+Downloading huey-2.6.0-py3-none-any.whl (76 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 77.0/77.0 kB ? eta 0:00:00
+Downloading huggingface_hub-1.9.0-py3-none-any.whl (637 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 637.4/637.4 kB 39.2 MB/s eta 0:00:00
+Downloading filelock-3.25.2-py3-none-any.whl (26 kB)
+Downloading joblib-1.5.3-py3-none-any.whl (309 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 309.1/309.1 kB 18.7 MB/s eta 0:00:00
+Downloading kagglesdk-0.1.16-py3-none-any.whl (160 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 160.5/160.5 kB 9.4 MB/s eta 0:00:00
+Downloading kiwisolver-1.5.0-cp311-cp311-win_amd64.whl (73 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 4.0 MB/s eta 0:00:00
+Downloading multiprocess-0.70.19-py311-none-any.whl (144 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 144.5/144.5 kB ? eta 0:00:00
+Downloading narwhals-2.18.1-py3-none-any.whl (444 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 445.0/445.0 kB ? eta 0:00:00
+Downloading packaging-26.0-py3-none-any.whl (74 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 74.4/74.4 kB ? eta 0:00:00
+Downloading pillow-12.2.0-cp311-cp311-win_amd64.whl (7.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 90.7 MB/s eta 0:00:00
+Downloading protobuf-6.33.6-cp310-abi3-win_amd64.whl (437 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 437.1/437.1 kB 26.7 MB/s eta 0:00:00
+Downloading pyarrow-23.0.1-cp311-cp311-win_amd64.whl (27.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 27.5/27.5 MB 59.8 MB/s eta 0:00:00
+Downloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 122.8/122.8 kB ? eta 0:00:00
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading pytz-2026.1.post1-py2.py3-none-any.whl (510 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 510.5/510.5 kB ? eta 0:00:00
+Downloading pyyaml-6.0.3-cp311-cp311-win_amd64.whl (158 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 158.8/158.8 kB ? eta 0:00:00
+Downloading regex-2026.4.4-cp311-cp311-win_amd64.whl (278 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 278.4/278.4 kB 17.9 MB/s eta 0:00:00
+Downloading requests-2.33.1-py3-none-any.whl (64 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB ? eta 0:00:00
+Downloading scipy-1.17.1-cp311-cp311-win_amd64.whl (36.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 36.6/36.6 MB 54.4 MB/s eta 0:00:00
+Downloading sklearn_compat-0.1.5-py3-none-any.whl (20 kB)
+Downloading skops-0.13.0-py3-none-any.whl (131 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.2/131.2 kB ? eta 0:00:00
+Downloading sqlalchemy-2.0.49-cp311-cp311-win_amd64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 142.2 MB/s eta 0:00:00
+Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+Downloading tzdata-2026.1-py2.py3-none-any.whl (348 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 349.0/349.0 kB 21.2 MB/s eta 0:00:00
+Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.6/131.6 kB ? eta 0:00:00
+Downloading waitress-3.0.2-py3-none-any.whl (56 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.2/56.2 kB 3.1 MB/s eta 0:00:00
+Downloading bleach-6.3.0-py3-none-any.whl (164 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 164.4/164.4 kB ? eta 0:00:00
+Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Downloading python_slugify-8.0.4-py2.py3-none-any.whl (10 kB)
+Downloading xxhash-3.6.0-cp311-cp311-win_amd64.whl (31 kB)
+Downloading aiohttp-3.13.5-cp311-cp311-win_amd64.whl (462 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 462.9/462.9 kB 28.3 MB/s eta 0:00:00
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading cachetools-7.0.5-py3-none-any.whl (13 kB)
+Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 153.7/153.7 kB ? eta 0:00:00
+Downloading cffi-2.0.0-cp311-cp311-win_amd64.whl (182 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 182.8/182.8 kB ? eta 0:00:00
+Downloading charset_normalizer-3.4.7-cp311-cp311-win_amd64.whl (159 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 159.3/159.3 kB ? eta 0:00:00
+Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Downloading databricks_sdk-0.102.0-py3-none-any.whl (838 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 838.5/838.5 kB ? eta 0:00:00
+Downloading fastapi-0.135.3-py3-none-any.whl (117 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 117.7/117.7 kB ? eta 0:00:00
+Downloading fsspec-2026.2.0-py3-none-any.whl (202 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 202.5/202.5 kB 12.0 MB/s eta 0:00:00
+Downloading gitpython-3.1.46-py3-none-any.whl (208 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 208.6/208.6 kB ? eta 0:00:00
+Downloading graphql_core-3.2.8-py3-none-any.whl (207 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 207.3/207.3 kB ? eta 0:00:00
+Downloading graphql_relay-3.2.0-py3-none-any.whl (16 kB)
+Downloading greenlet-3.3.2-cp311-cp311-win_amd64.whl (230 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 230.4/230.4 kB ? eta 0:00:00
+Downloading hf_xet-1.4.3-cp37-abi3-win_amd64.whl (3.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.7/3.7 MB 33.3 MB/s eta 0:00:00
+Downloading idna-3.11-py3-none-any.whl (71 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.0/71.0 kB ? eta 0:00:00
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 134.9/134.9 kB ? eta 0:00:00
+Downloading markupsafe-3.0.3-cp311-cp311-win_amd64.whl (15 kB)
+Downloading opentelemetry_api-1.40.0-py3-none-any.whl (68 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.7/68.7 kB ? eta 0:00:00
+Downloading importlib_metadata-8.7.1-py3-none-any.whl (27 kB)
+Downloading opentelemetry_proto-1.40.0-py3-none-any.whl (72 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.1/72.1 kB ? eta 0:00:00
+Downloading opentelemetry_sdk-1.40.0-py3-none-any.whl (141 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 142.0/142.0 kB ? eta 0:00:00
+Downloading opentelemetry_semantic_conventions-0.61b0-py3-none-any.whl (231 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 231.6/231.6 kB ? eta 0:00:00
+Downloading prettytable-3.17.0-py3-none-any.whl (34 kB)
+Downloading pydantic-2.12.5-py3-none-any.whl (463 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 463.6/463.6 kB 28.3 MB/s eta 0:00:00
+Downloading pydantic_core-2.41.5-cp311-cp311-win_amd64.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 25.7 MB/s eta 0:00:00
+Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Downloading pywin32-311-cp311-cp311-win_amd64.whl (9.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.5/9.5 MB 87.1 MB/s eta 0:00:00
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading sqlparse-0.5.5-py3-none-any.whl (46 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.1/46.1 kB ? eta 0:00:00
+Downloading text_unidecode-1.3-py2.py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.2/78.2 kB ? eta 0:00:00
+Using cached typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Downloading uvicorn-0.43.0-py3-none-any.whl (68 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.6/68.6 kB ? eta 0:00:00
+Downloading werkzeug-3.1.8-py3-none-any.whl (226 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 226.5/226.5 kB 13.5 MB/s eta 0:00:00
+Downloading anyio-4.13.0-py3-none-any.whl (114 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 114.4/114.4 kB ? eta 0:00:00
+Downloading mako-1.3.10-py3-none-any.whl (78 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 1.5 MB/s eta 0:00:00
+Downloading typer-0.24.1-py3-none-any.whl (56 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.1/56.1 kB 2.9 MB/s eta 0:00:00
+Downloading webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+Downloading aiohappyeyeballs-2.6.1-py3-none-any.whl (15 kB)
+Downloading aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.5/67.5 kB 3.6 MB/s eta 0:00:00
+Downloading frozenlist-1.8.0-cp311-cp311-win_amd64.whl (44 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 44.1/44.1 kB 2.1 MB/s eta 0:00:00
+Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.8/62.8 kB ? eta 0:00:00
+Downloading google_auth-2.49.1-py3-none-any.whl (240 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 240.7/240.7 kB 14.4 MB/s eta 0:00:00
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading multidict-6.7.1-cp311-cp311-win_amd64.whl (45 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 46.0/46.0 kB ? eta 0:00:00
+Downloading propcache-0.4.1-cp311-cp311-win_amd64.whl (41 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.6/41.6 kB ? eta 0:00:00
+Downloading rich-14.3.3-py3-none-any.whl (310 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.5/310.5 kB ? eta 0:00:00
+Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Downloading starlette-1.0.0-py3-none-any.whl (72 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.7/72.7 kB 3.9 MB/s eta 0:00:00
+Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Downloading yarl-1.23.0-cp311-cp311-win_amd64.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB ? eta 0:00:00
+Downloading zipp-3.23.0-py3-none-any.whl (10 kB)
+Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 48.2/48.2 kB ? eta 0:00:00
+Downloading wcwidth-0.6.0-py3-none-any.whl (94 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 94.2/94.2 kB ? eta 0:00:00
+Downloading markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.3/87.3 kB 5.1 MB/s eta 0:00:00
+Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 181.3/181.3 kB 11.4 MB/s eta 0:00:00
+Downloading pygments-2.20.0-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 81.4 MB/s eta 0:00:00
+Downloading smmap-5.0.3-py3-none-any.whl (24 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading pyasn1-0.6.3-py3-none-any.whl (83 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 84.0/84.0 kB ? eta 0:00:00
+Installing collected packages: webencodings, text-unidecode, pywin32, pytz, huey, zipp, xxhash, wcwidth, waitress, urllib3, tzdata, typing-extensions, threadpoolctl, sqlparse, smmap, six, shellingham, regex, pyyaml, python-slugify, python-dotenv, pyparsing, pygments, pycparser, pyasn1, pyarrow, protobuf, propcache, pillow, packaging, numpy, narwhals, multidict, mdurl, markupsafe, kiwisolver, joblib, itsdangerous, idna, hf-xet, h11, greenlet, graphql-core, fsspec, frozenlist, fonttools, filelock, dill, cycler, colorama, cloudpickle, charset_normalizer, certifi, cachetools, blinker, bleach, attrs, annotated-types, annotated-doc, aiohappyeyeballs, yarl, werkzeug, typing-inspection, tqdm, sqlalchemy, scipy, requests, python-dateutil, pydantic-core, pyasn1-modules, prettytable, plotly, opentelemetry-proto, multiprocess, markdown-it-py, Mako, jinja2, importlib_metadata, httpcore, graphql-relay, gitdb, contourpy, click, cffi, anyio, aiosignal, xgboost, uvicorn, starlette, scikit-learn, rich, pydantic, pandas, opentelemetry-api, nltk, matplotlib, kagglesdk, httpx, graphene, gitpython, Flask, docker, cryptography, alembic, aiohttp, wordcloud, typer, skops, sklearn-compat, seaborn, opentelemetry-semantic-conventions, kaggle, google-auth, Flask-CORS, fastapi, opentelemetry-sdk, imbalanced-learn, huggingface-hub, databricks-sdk, mlflow-tracing, mlflow-skinny, datasets, mlflow
+Successfully installed Flask-3.1.3 Flask-CORS-6.0.2 Mako-1.3.10 aiohappyeyeballs-2.6.1 aiohttp-3.13.5 aiosignal-1.4.0 alembic-1.18.4 annotated-doc-0.0.4 annotated-types-0.7.0 anyio-4.13.0 attrs-26.1.0 bleach-6.3.0 blinker-1.9.0 cachetools-7.0.5 certifi-2026.2.25 cffi-2.0.0 charset_normalizer-3.4.7 click-8.3.2 cloudpickle-3.1.2 colorama-0.4.6 contourpy-1.3.3 cryptography-46.0.6 cycler-0.12.1 databricks-sdk-0.102.0 datasets-4.8.4 dill-0.4.1 docker-7.1.0 fastapi-0.135.3 filelock-3.25.2 fonttools-4.62.1 frozenlist-1.8.0 fsspec-2026.2.0 gitdb-4.0.12 gitpython-3.1.46 google-auth-2.49.1 graphene-3.4.3 graphql-core-3.2.8 graphql-relay-3.2.0 greenlet-3.3.2 h11-0.16.0 hf-xet-1.4.3 httpcore-1.0.9 httpx-0.28.1 huey-2.6.0 huggingface-hub-1.9.0 idna-3.11 imbalanced-learn-0.14.1 importlib_metadata-8.7.1 itsdangerous-2.2.0 jinja2-3.1.6 joblib-1.5.3 kaggle-2.0.0 kagglesdk-0.1.16 kiwisolver-1.5.0 markdown-it-py-4.0.0 markupsafe-3.0.3 matplotlib-3.10.8 mdurl-0.1.2 mlflow-3.10.1 mlflow-skinny-3.10.1 mlflow-tracing-3.10.1 multidict-6.7.1 multiprocess-0.70.19 narwhals-2.18.1 nltk-3.9.4 numpy-2.4.4 opentelemetry-api-1.40.0 opentelemetry-proto-1.40.0 opentelemetry-sdk-1.40.0 opentelemetry-semantic-conventions-0.61b0 packaging-26.0 pandas-2.3.3 pillow-12.2.0 plotly-6.6.0 prettytable-3.17.0 propcache-0.4.1 protobuf-6.33.6 pyarrow-23.0.1 pyasn1-0.6.3 pyasn1-modules-0.4.2 pycparser-3.0 pydantic-2.12.5 pydantic-core-2.41.5 pygments-2.20.0 pyparsing-3.3.2 python-dateutil-2.9.0.post0 python-dotenv-1.2.2 python-slugify-8.0.4 pytz-2026.1.post1 pywin32-311 pyyaml-6.0.3 regex-2026.4.4 requests-2.33.1 rich-14.3.3 scikit-learn-1.8.0 scipy-1.17.1 seaborn-0.13.2 shellingham-1.5.4 six-1.17.0 sklearn-compat-0.1.5 skops-0.13.0 smmap-5.0.3 sqlalchemy-2.0.49 sqlparse-0.5.5 starlette-1.0.0 text-unidecode-1.3 threadpoolctl-3.6.0 tqdm-4.67.3 typer-0.24.1 typing-extensions-4.15.0 typing-inspection-0.4.2 tzdata-2026.1 urllib3-2.6.3 uvicorn-0.43.0 waitress-3.0.2 wcwidth-0.6.0 webencodings-0.5.1 werkzeug-3.1.8 wordcloud-1.9.6 xgboost-3.2.0 xxhash-3.6.0 yarl-1.23.0 zipp-3.23.0
+
+[notice] A new release of pip is available: 23.2.1 -> 26.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>python -m escalation_prediction.src.baseline_models.py
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Scripts\python.exe: Error while finding module specification for 'escalation_prediction.src.baseline_models.py' (ModuleNotFoundError: No module named 'escalation_prediction'). Try using 'escalation_prediction.src.baseline_models' instead of 'escalation_prediction.src.baseline_models.py' as the module name.
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>python -m escalation_prediction.src.baseline_models
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Scripts\python.exe: Error while finding module specification for 'escalation_prediction.src.baseline_models' (ModuleNotFoundError: No module named 'escalation_prediction')
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>cd ..
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m escalation_prediction.src.baseline_models
+2026/04/05 01:48:24 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/04/05 01:48:24 INFO mlflow.store.db.utils: Updating database tables
+2026/04/05 01:48:25 INFO mlflow.tracking.fluent: Experiment with name 'Customer Escalation Prediction - Baseline Models' does not exist. Creating a new experiment.
+2026-04-05 01:48:25,682 - INFO - Loading data from path: data/processed/support_tickets.csv
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 201, in <module>
+    model_trainer.baseline_training_run()
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 160, in baseline_training_run
+    self.load_data()    #load data
+    ^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 79, in load_data
+    df = pd.read_csv(self.data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\parsers\readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\parsers\readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\parsers\readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\parsers\readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/processed/support_tickets.csv'
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m escalation_prediction.src.baseline_models
+2026-04-05 01:50:40,799 - INFO - Loading data from path: data/processed/support_tickets.csv
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 201, in <module>
+    model_trainer.baseline_training_run()
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 160, in baseline_training_run
+    self.load_data()    #load data
+    ^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 79, in load_data
+    df = pd.read_pickle(self.data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\pickle.py", line 185, in read_pickle
+    with get_handle(
+         ^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/processed/support_tickets.csv'
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m escalation_prediction.src.baseline_models
+2026-04-05 01:54:41,434 - INFO - Loading data from path: data/processed/support_tickets.csv
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 201, in <module>
+    model_trainer.baseline_training_run()
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 160, in baseline_training_run
+    self.load_data()    #load data
+    ^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 79, in load_data
+    df = pd.read_pickle(self.data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\pickle.py", line 185, in read_pickle
+    with get_handle(
+         ^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/processed/support_tickets.csv'
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m escalation_prediction.src.baseline_models
+2026-04-05 02:00:16,659 - INFO - Loading data from path: data/processed/cleaned_tickets.pkl
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 201, in <module>
+    model_trainer.baseline_training_run()
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 160, in baseline_training_run
+    self.load_data()    #load data
+    ^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 79, in load_data
+    df = pd.read_pickle(self.data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\pickle.py", line 185, in read_pickle
+    with get_handle(
+         ^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/processed/cleaned_tickets.pkl'
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m escalation_prediction.src.baseline_models
+2026-04-05 02:01:12,358 - INFO - Loading data from path: data/processed/cleaned_tickets.pkl
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 201, in <module>
+    model_trainer.baseline_training_run()
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 160, in baseline_training_run
+    self.load_data()    #load data
+    ^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 79, in load_data
+    df = pd.read_pickle(self.data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\pickle.py", line 185, in read_pickle
+    with get_handle(
+         ^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/processed/cleaned_tickets.pkl'
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>

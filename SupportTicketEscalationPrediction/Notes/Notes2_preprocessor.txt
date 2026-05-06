@@ -1,0 +1,8 @@
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>python -m src.preprocessor
+2026-04-05 19:54:49,133 - INFO - Starting data preprocessing
+2026-04-05 19:54:49,156 - INFO - Sampled to len 5000 rows
+2026-04-05 19:54:49,156 - INFO - Handling missing values
+2026-04-05 19:54:49,160 - INFO - After handling missing values: 5000 rows
+2026-04-05 19:54:51,720 - INFO - Applying SMOTE for class balancing
+2026-04-05 19:54:51,796 - INFO - Balanced dataset: 5504 samples, 2752 positive
+2026-04-05 19:54:51,804 - INFO - Saved processed data to data/processed\cleaned_data.pkl

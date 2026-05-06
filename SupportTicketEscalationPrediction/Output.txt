@@ -1,0 +1,53 @@
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>python -m src.baseline_models
+2026-04-05 23:00:08,141 - INFO - Loading data from path: data/processed/cleaned_data.pkl
+2026-04-05 23:00:09,665 - INFO - Loaded 29861 samples, total features 15008. Class counts: {1: 16011, 0: 13850}
+2026-04-05 23:00:09,684 - INFO - Data split is: train 23888, test 5973
+2026-04-05 23:00:10,113 - INFO - Training model is: LogisticRegression
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\sklearn\linear_model\_logistic.py:1184: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=-1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\sklearn\linear_model\_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\sklearn\linear_model\_logistic.py:1184: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=-1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\sklearn\linear_model\_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\sklearn\linear_model\_logistic.py:1184: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=-1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\sklearn\linear_model\_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\sklearn\linear_model\_logistic.py:1184: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=-1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\sklearn\linear_model\_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\sklearn\linear_model\_logistic.py:1184: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=-1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\sklearn\linear_model\_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\sklearn\linear_model\_logistic.py:1184: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=-1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\sklearn\linear_model\_sag.py:348: ConvergenceWarning: The max_iter was reached which means the coef_ did not converge
+  warnings.warn(
+2026-04-05 23:02:03,696 - INFO - Model LogisticRegression, F1 0.5984, ROC-AUC: 0.6368)
+2026/04/05 23:02:03 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+2026/04/05 23:02:03 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+2026-04-05 23:02:06,940 - INFO - Confusion Matrix for LogisticRegression: is
+[[1816  954]
+ [1428 1775]]
+2026-04-05 23:02:07,373 - INFO - Model LogisticRegression saved successfully, path: models/baseline\LogisticRegression.pkl
+2026-04-05 23:02:07,401 - INFO - Training model is: RandomForest
+2026-04-05 23:02:48,815 - INFO - Model RandomForest, F1 0.7215, ROC-AUC: 0.7276)
+2026/04/05 23:02:48 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+2026/04/05 23:02:48 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+2026-04-05 23:02:51,830 - INFO - Confusion Matrix for RandomForest: is
+[[1761 1009]
+ [ 826 2377]]
+2026-04-05 23:02:52,207 - INFO - Model RandomForest saved successfully, path: models/baseline\RandomForest.pkl
+2026-04-05 23:02:52,232 - INFO - Training model is: XGBoost
+2026-04-05 23:04:28,493 - INFO - Model XGBoost, F1 0.7135, ROC-AUC: 0.7319)
+2026/04/05 23:04:28 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+2026/04/05 23:04:28 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+2026-04-05 23:04:31,437 - INFO - Confusion Matrix for XGBoost: is
+[[1846  924]
+ [ 914 2289]]
+2026-04-05 23:04:31,773 - INFO - Model XGBoost saved successfully, path: models/baseline\XGBoost.pkl
+2026-04-05 23:04:31,789 - INFO - Baseline model completed.

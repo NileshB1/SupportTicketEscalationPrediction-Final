@@ -1,0 +1,21 @@
+1.
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m venv .env
+
+2.
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>dir
+ Volume in drive D is DATA
+ Volume Serial Number is D496-FD8A
+
+ Directory of D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction
+
+05-04-2026  01:40    <DIR>          .
+04-04-2026  12:25    <DIR>          ..
+05-04-2026  01:40    <DIR>          .env
+05-04-2026  01:40    <DIR>          escalation_prediction
+               0 File(s)              0 bytes
+               4 Dir(s)  236,347,355,136 bytes free
+
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>.env\Scripts\activate.bat
+
+3.
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>pip install -r requirements.txt

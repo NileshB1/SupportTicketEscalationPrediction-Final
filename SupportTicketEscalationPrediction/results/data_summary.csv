@@ -1,0 +1,12 @@
+,ticket_id,conversation_text,sentiment_score,escalated,processed_text,text_length
+count,29861,29861,29861.0,29861.0,29861,29861.0
+unique,16680,29691,,,29679,
+top,REQ0098743,My current PIV card is damaged and no longer readable by the card reader. I need a replacement as soon as possible to maintain access to secure systems and facilities. Please advise on the next steps and expected timeline for the replacement process.,,,recently received new piv card assistance activating access secure system guide activation process activate behalf soon possible,
+freq,280,3,,,4,
+mean,,,0.6944611031110813,0.5361843206858444,,297.8120625565118
+std,,,0.2970546192653819,0.49869732653477483,,115.40344637488015
+min,,,-0.9954,0.0,,30.0
+25%,,,0.6000000000000001,0.0,,229.0
+50%,,,0.8,1.0,,274.0
+75%,,,0.9,1.0,,334.0
+max,,,1.0,1.0,,1485.0

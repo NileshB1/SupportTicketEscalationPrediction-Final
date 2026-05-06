@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#89f5e7",   "tertiary": "#000000",
+                    "secondary-fixed-dim": "#6bd8cb",  "surface-dim": "#cbdbf5",
+                    "surface-container": "#e5eeff",  "on-error": "#ffffff",
+                    "on-primary-container": "#7c839b",   "on-background": "#0b1c30",
+                    "on-primary-fixed-variant": "#3f465c", "primary-fixed-dim": "#bec6e0",
+                    "inverse-on-surface": "#eaf1ff",    "on-error-container": "#93000a",
+                    "inverse-surface": "#213145",   "outline-variant": "#c6c6cd",
+                    "on-secondary": "#ffffff",  "on-primary-fixed": "#131b2e",
+                    "error": "#ba1a1a",   "on-surface": "#0b1c30",
+                    "primary-container": "#131b2e",   "tertiary-fixed-dim": "#ffb95f",
+                    "tertiary-container": "#2a1700", "primary-fixed": "#dae2fd",
+                    "on-surface-variant": "#45464d",  "surface-tint": "#565e74",
+                    "on-tertiary-fixed-variant": "#653e00",     "tertiary-fixed": "#ffddb8",
+                    "surface": "#f8f9ff",   "on-tertiary-container": "#b87500",
+                    "inverse-primary": "#bec6e0",  "on-secondary-fixed-variant": "#005049",
+                    "surface-bright": "#f8f9ff",  "on-tertiary-fixed": "#2a1700",
+                    "secondary-container": "#86f2e4",  "on-primary": "#ffffff",
+                    "surface-container-low": "#eff4ff",  "surface-container-highest": "#d3e4fe",
+                    "on-secondary-fixed": "#00201d",    "error-container": "#ffdad6",
+                    "outline": "#76777d",    "background": "#f8f9ff",
+                    "secondary": "#006a61",   "on-secondary-container": "#006f66",
+                    "surface-container-lowest": "#ffffff",    "surface-container-high": "#dce9ff",
+                    "on-tertiary": "#ffffff","surface-variant": "#d3e4fe",
+                    "primary": "#000000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",    "lg": "0.25rem",
+                    "xl": "0.5rem",  "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "0.5rem", "gutter": "1rem",
+                    "stack-md": "1rem",   "stack-lg": "1.5rem",
+                    "container-margin": "2rem"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],  "body-md": ["Inter"],
+                    "body-lg": ["Inter"],    "data-mono": ["Inter"],
+                    "label-md": ["Inter"],    "headline-lg": ["Inter"],
+                    "headline-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "data-mono": ["13px", {"lineHeight": "18px", "fontWeight": "400"}], "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-slate-200 bg-slate-50 flex flex-col p-4 gap-2 z-50">
+<div class="mb-8 px-2">
+<h1 class="text-lg font-bold text-slate-900">Escalation AI</h1>
+<p class="font-['Inter'] text-sm tracking-tight text-slate-500">Predictive Analytics</p>
+</div>
+
+<nav class="flex flex-col gap-1">
+<!--overview Tab Active -->
+<a class="flex items-center gap-3 px-3 py-2 bg-slate-200 text-slate-900 rounded-sm font-semibold transition-colors duration-200 ease-in-out" href="/app/predictive_analytics_overview.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Inter'] text-sm tracking-tight">Overview</span>
+</a>
+
+
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 font-medium hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200 ease-in-out" href="/app/support_queue.html">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-['Inter'] text-sm tracking-tight">Tickets</span>
+</a>
+
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 font-medium hover:bg-slate-100 hover:text-slate-900 transition-colors duration-200 ease-in-out" href="/app/model_performance_monitor.html">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-['Inter'] text-sm tracking-tight">Model Performance</span>
+</a>
+
+</nav>
+<div onclick="logout()" class="mt-auto p-4 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors group text-center">
+<span class="text-xs font-bold text-slate-600 uppercase tracking-widest group-hover:text-red-600 transition-colors">Sign Out</span>
+</div>
+</aside>
+
+
+
+
+<!--topNavBar Shell -->
+<header class="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md border-b border-slate-200">
+<div class="flex items-center justify-end h-14 px-6 gap-8 ml-64">
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:text-[#0F172A] scale-95 active:scale-100 transition-transform" title="This page provides an overview of predictive analytics, real-time sentiment telemetry, and escalation risk forecasting.">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+
+<!-- Main Content Canvas -->
+<main class="ml-64 p-gutter max-w-7xl">
+<!-- Header -->
+<div class="mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary">Predictive Analytics Overview</h2>
+<p class="font-body-md text-on-surface-variant">Real-time sentiment telemetry and escalation risk forecasting</p>
+</div>
+
+
+<!-- Summary Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-stack-lg">
+<div class="bg-surface-container-lowest border border-slate-200 p-stack-md rounded-lg flex flex-col gap-stack-sm">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">High-Risk Tickets</span>
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+</div>
+<div class="flex flex-col">
+<span id="stat-high-risk" class="font-headline-md text-headline-md text-on-background">-</span>
+
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-slate-200 p-stack-md rounded-lg flex flex-col gap-stack-sm">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Avg. Sentiment Score</span>
+<span class="material-symbols-outlined text-secondary" data-icon="psychology">psychology</span>
+</div>
+<div class="flex flex-col">
+<span id="stat-avg-sentiment" class="font-headline-md text-headline-md text-on-background">-</span>
+
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-slate-200 p-stack-md rounded-lg flex flex-col gap-stack-sm">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Active Predictions</span>
+<span class="material-symbols-outlined text-primary-container" data-icon="dynamic_form">dynamic_form</span>
+</div>
+<div class="flex flex-col">
+<span id="stat-active-predictions" class="font-headline-md text-headline-md text-on-background">-</span>
+
+</div>
+</div>
+
+
+
+
+<div class="bg-surface-container-lowest border border-slate-200 p-stack-md rounded-lg flex flex-col gap-stack-sm">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Model Accuracy</span>
+<span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+</div>
+
+<div class="flex flex-col">
+<span id="stat-model-accuracy" class="font-headline-md text-headline-md text-on-background">-</span>
+
+</div>
+</div>
+</div>
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Forecast List -->
+<div class="lg:col-span-3 bg-surface-container-lowest border border-slate-200 rounded-xl overflow-hidden">
+<div class="p-stack-md border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+<h3 class="font-headline-sm text-headline-sm text-on-background">High-Risk Escalation Forecast</h3>
+</div>
+
+<table class="w-full text-left">
+<thead>
+<tr class="text-[11px] text-slate-400 uppercase tracking-wider bg-slate-50">
+<th class="px-stack-md py-stack-sm font-semibold">Ticket ID</th>
+<th class="px-stack-md py-stack-sm font-semibold cursor-pointer hover:text-slate-600 transition-colors" onclick="toggleSort()">
+<div class="flex items-center gap-1">
+Probability <span id="sort-icon" class="material-symbols-outlined text-[14px]">arrow_downward</span>
+</div>
+</th>
+<th class="px-stack-md py-stack-sm font-semibold">Primary Trigger</th>
+<th class="px-stack-md py-stack-sm font-semibold text-right">Status</th>
+</tr>
+</thead>
+<tbody id="forecast-list" class="divide-y divide-slate-100">
+    <!-- Forecast data injected dynamically -->
+</tbody>
+</table>
+<div class="p-stack-md border-t border-slate-100 flex justify-between items-center bg-slate-50/50">
+    <button onclick="changePage(-1)" id="btn-prev" class="px-3 py-1 text-xs font-semibold bg-white border border-slate-200 rounded text-slate-500 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed">Previous</button>
+    <span id="page-info" class="text-xs font-medium text-slate-500">Page 1 of 1</span>
+    <button onclick="changePage(1)" id="btn-next" class="px-3 py-1 text-xs font-semibold bg-white border border-slate-200 rounded text-slate-500 hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed">Next</button>
+</div>
+</div>
+</main>
+<script>
+    // Application state
+    let tickets = [];
+    let page = 1;
+    const pageSize = 10;
+    let sortDescending = true;
+
+    async function loadForecast() {
+        try {
+            const res = await fetch('/api/tickets?count=200');
+            const payload = await res.json();
+            // Keep only human-friendly ticket IDs
+            tickets = payload.tickets.filter(t => !t.ticket_id.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i));
+            renderTable();
+        } catch (err) {
+            console.error('Failed to load forecast:', err);
+        }
+    }
+
+    function toggleSort() {
+        sortDescending = !sortDescending;
+        document.getElementById('sort-icon').innerText = sortDescending ? 'arrow_downward' : 'arrow_upward';
+        tickets.sort((a, b) => sortDescending ? b.predicted_risk - a.predicted_risk : a.predicted_risk - b.predicted_risk);
+        page = 1;
+        renderTable();
+    }
+
+    function changePage(offset) {
+        page += offset;
+        renderTable();
+    }
+
+    function renderTable() {
+        const tbody = document.getElementById('forecast-list');
+        tbody.innerHTML = '';
+        
+        const totalPages = Math.ceil(tickets.length / pageSize);
+        if (page < 1) page = 1;
+        if (page > totalPages) page = totalPages;
+
+        document.getElementById('page-info').innerText = `Page ${page} of ${totalPages || 1}`;
+        document.getElementById('btn-prev').disabled = page === 1;
+        document.getElementById('btn-next').disabled = page === totalPages || totalPages === 0;
+
+        const startIdx = (page - 1) * pageSize;
+        const pageData = tickets.slice(startIdx, startIdx + pageSize);
+        
+        
+        pageData.forEach(ticket => {
+            const prob = Math.round(ticket.predicted_risk * 100);
+            
+            let barColor = 'bg-secondary';  let txtColor = 'text-secondary';
+            let tagColor = 'bg-secondary-container text-on-secondary-container';
+            let status = 'Watched';
+            
+            if(prob > 85) {
+                barColor = 'bg-error';  txtColor = 'text-error';
+                tagColor = 'bg-error-container text-on-error-container';
+                status = 'Urgent';
+            } else if(prob > 60) {
+                barColor = 'bg-tertiary-fixed-dim';  txtColor = 'text-on-tertiary-container';
+                tagColor = 'bg-tertiary-fixed text-on-tertiary-fixed';
+                status = 'Pending';
+            }
+
+            tbody.innerHTML += `
+                <tr class="hover:bg-slate-50 transition-colors cursor-pointer" onclick="window.location.href='/app/ticket_analysis_detail.html?id=${ticket.ticket_id}'">
+                    <td class="px-stack-md py-stack-md font-data-mono text-data-mono text-on-surface">${ticket.ticket_id}</td>
+                    <td class="px-stack-md py-stack-md">
+                        <div class="flex items-center gap-2">
+                            <div class="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="${barColor} h-full" style="width: ${prob}%"></div>
+                            </div>
+                            <span class="text-xs font-bold ${txtColor}">${prob}%</span>
+                        </div>
+                    </td>
+                    <td class="px-stack-md py-stack-md font-body-md text-on-surface-variant truncate max-w-[200px]">${ticket.text_snippet}</td>
+                    <td class="px-stack-md py-stack-md text-right">
+                        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${tagColor}">${status}</span>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+    async function loadStats() {
+        try {
+            const res = await fetch('/api/dashboard_stats');
+            if (res.ok) {
+                const data = await res.json();
+                document.getElementById('stat-high-risk').innerText = data.high_risk_tickets;
+                document.getElementById('stat-avg-sentiment').innerText = data.avg_sentiment_score;
+                document.getElementById('stat-active-predictions').innerText = data.active_predictions.toLocaleString();
+                document.getElementById('stat-model-accuracy').innerText = data.model_accuracy + '%';
+            }
+        } catch(e) {
+            console.error('Failed to load stats', e);
+        }
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        loadForecast();
+        loadStats();
+    });
+</script>
+<script>
+    if(!localStorage.getItem('auth_token')) {
+        window.location.href = '/app/login.html';
+    }
+    function logout() {
+        localStorage.removeItem('auth_token');
+        window.location.href = '/app/login.html';
+    }
+</script>
+</body></html>

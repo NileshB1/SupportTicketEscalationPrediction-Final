@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Support Queue | Escalation AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#89f5e7", "tertiary": "#000000",
+                    "secondary-fixed-dim": "#6bd8cb",    "surface-dim": "#cbdbf5",
+                    "surface-container": "#e5eeff",    "on-error": "#ffffff",
+                    "on-primary-container": "#7c839b",   "on-background": "#0b1c30",
+                    "on-primary-fixed-variant": "#3f465c", "primary-fixed-dim": "#bec6e0",
+                    "inverse-on-surface": "#eaf1ff", "on-error-container": "#93000a",
+                    "inverse-surface": "#213145",   "outline-variant": "#c6c6cd",
+                    "on-secondary": "#ffffff",    "on-primary-fixed": "#131b2e",
+                    "error": "#ba1a1a",   "on-surface": "#0b1c30",
+                    "primary-container": "#131b2e",   "tertiary-fixed-dim": "#ffb95f",
+                    "tertiary-container": "#2a1700", "primary-fixed": "#dae2fd",
+                    "on-surface-variant": "#45464d", "surface-tint": "#565e74",
+                    "on-tertiary-fixed-variant": "#653e00",  "tertiary-fixed": "#ffddb8",
+                    "surface": "#f8f9ff",    "on-tertiary-container": "#b87500",
+                    "inverse-primary": "#bec6e0",  "on-secondary-fixed-variant": "#005049",
+                    "surface-bright": "#f8f9ff",  "on-tertiary-fixed": "#2a1700",
+                    "secondary-container": "#86f2e4",  "on-primary": "#ffffff",
+                    "surface-container-low": "#eff4ff", "surface-container-highest": "#d3e4fe",
+                    "on-secondary-fixed": "#00201d",  "error-container": "#ffdad6",
+                    "outline": "#76777d",  "background": "#f8f9ff",
+                    "secondary": "#006a61",   "on-secondary-container": "#006f66",
+                    "surface-container-lowest": "#ffffff", "surface-container-high": "#dce9ff",
+                    "on-tertiary": "#ffffff", "surface-variant": "#d3e4fe",
+                    "primary": "#000000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",    "lg": "0.25rem",
+                    "xl": "0.5rem", "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "0.5rem", "gutter": "1rem",
+                    "stack-md": "1rem",  "stack-lg": "1.5rem",
+                    "container-margin": "2rem"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],  "body-md": ["Inter"],
+                    "body-lg": ["Inter"], "data-mono": ["Inter"],
+                    "label-md": ["Inter"], "headline-lg": ["Inter"],
+                    "headline-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "data-mono": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],  "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}]
+            }
+          },
+        },
+}
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .risk-pulse {
+            position: relative;
+        }
+        .risk-pulse::after {
+            content: '';   position: absolute;
+            top: 0;    right: 0;
+            width: 8px;  height: 8px;
+            background-color: #ba1a1a; border-radius: 50%;
+            animation: pulse-red 2s infinite;
+        }
+        @keyframes pulse-red {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(186, 26, 26, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(186, 26, 26, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(186, 26, 26, 0); }
+        }
+</style>
+</head>
+
+
+<body class="bg-background text-on-background font-body-md">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 flex flex-col h-full p-4 gap-2 z-50">
+
+<div class="mb-8 px-2">
+<h1 class="text-lg font-bold text-slate-900 dark:text-slate-50 font-['Inter'] tracking-tight">Escalation AI</h1>
+<p class="text-xs text-on-primary-container font-['Inter']">Predictive Analytics</p>
+</div>
+
+
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 font-medium font-['Inter'] text-sm tracking-tight hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 transition-colors duration-200" href="/app/predictive_analytics_overview.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>Overview
+</a>
+
+<a class="flex items-center gap-3 px-3 py-2 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white rounded-sm font-semibold font-['Inter'] text-sm tracking-tight transition-colors duration-200" href="/app/support_queue.html">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>Tickets
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 font-medium font-['Inter'] text-sm tracking-tight hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 transition-colors duration-200" href="/app/model_performance_monitor.html">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>Model Performance
+</a>
+
+</nav>
+<div onclick="logout()" class="mt-auto p-4 bg-slate-200 dark:bg-slate-800 rounded-lg cursor-pointer hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors group">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-400 overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="professional minimalist avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCYc2z4kZExXnZ21XQf1b0aV780d6Dqy6oGv-0x68tB3aCqXl0ZqF1vQkG_11H4Lg8vRjM3F_0tH8vRjM3F_0tH8vRjM3F_0tH8vRjM3F_0tH8vRjM3F_0tH8vRjM3F_0t"/>
+</div>
+
+
+<div class="overflow-hidden">
+<span class="text-xs font-bold text-slate-900 dark:text-white truncate block group-hover:text-red-600 dark:group-hover:text-red-400">System Root</span>
+<span class="text-[10px] text-slate-500 uppercase tracking-widest block group-hover:text-red-500 transition-colors">Sign Out</span>
+</div>
+</div>
+</div>
+</aside>
+<!--main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!--topNavBar Shell -->
+<header class="sticky top-0 z-40 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md">
+<div class="flex items-center justify-between h-14 px-6 gap-8">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg" data-icon="search">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-900 border-none rounded-lg pl-10 pr-4 py-1.5 text-sm focus:ring-2 focus:ring-primary-container transition-all" placeholder="Search support tickets by ID or customer..." type="text"/>
+</div>
+
+</div>
+
+
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</button>
+
+<button class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-slate-200">
+<img alt="User profile" data-alt="Close-up of a professional support manager with a clean-cut look, neutral lighting, corporate headshot style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7eZ1aziYEg0u4WVhEOdNkL-M79v4CHC4XXna6psxpDG2gOV7hfazyBlizQUonZ_FKeP3E1aRC2dCWtkcvScnOoWGnop3xkKD19pj0SeanHGTdat_zw2hj_oQB_ciUg_hf1I_zIJdtrmuxipHuwGd1NeXF9mY6dQbE0TPleQOHlCAxwEvSinu1-x_EqhK7WLCY4s8PortzK2gYfduIWdx3w5ZRZg8UUXGBNdJuXbIwJGdljxaj2G-6CSggMfPsfPKGuylQO99i3w5Y"/>
+</div>
+</div>
+</div>
+</header>
+<!--view Content -->
+<div class="p-stack-lg space-y-stack-lg max-w-7xl mx-auto">
+<!-- Page Header & Active Filters -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-gutter">
+<div>
+
+
+<nav class="flex items-center gap-2 mb-2 text-label-md font-label-md text-on-primary-container uppercase tracking-widest">
+<span>Workspace</span>
+<span class="material-symbols-outlined text-[10px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-bold">Support Queue</span>
+</nav>
+
+<h2 class="text-headline-lg font-headline-lg text-tertiary">Active Support Queue</h2>
+</div>
+</section>
+<!-- Quick Filter Bar -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="bg-surface border border-slate-200 p-4 rounded-xl shadow-sm flex flex-col gap-2">
+<span class="text-label-md text-on-surface-variant font-label-md">PREDICTED RISK LEVEL</span>
+<div class="flex gap-2">
+<button onclick="setRiskFilter('High')" id="filter-risk-high" class="px-3 py-1 text-xs font-bold rounded-full bg-surface-container text-on-primary-container border transition-colors hover:bg-error-container">High</button>
+<button onclick="setRiskFilter('Medium')" id="filter-risk-medium" class="px-3 py-1 text-xs font-bold rounded-full bg-surface-container text-on-primary-container border transition-colors hover:bg-tertiary-fixed">Medium</button>
+<button onclick="setRiskFilter('Low')" id="filter-risk-low" class="px-3 py-1 text-xs font-bold rounded-full bg-surface-container text-on-primary-container border transition-colors hover:bg-secondary-fixed">Low</button>
+</div>
+</div>
+
+
+
+<div class="bg-surface border border-slate-200 p-4 rounded-xl shadow-sm flex flex-col gap-2">
+<span class="text-label-md text-on-surface-variant font-label-md">SENTIMENT TREND</span>
+<div class="flex gap-2">
+<button onclick="setSentimentFilter('Negative')" id="filter-sent-negative" class="px-3 py-1 text-xs font-bold rounded-full bg-surface-container text-on-primary-container hover:bg-error-container border border-transparent">Negative</button>
+<button onclick="setSentimentFilter('Any')" id="filter-sent-any" class="px-3 py-1 text-xs font-bold rounded-full bg-primary text-white border border-primary">Any</button>
+<button onclick="setSentimentFilter('Positive')" id="filter-sent-positive" class="px-3 py-1 text-xs font-bold rounded-full bg-surface-container text-on-primary-container hover:bg-secondary-fixed border border-transparent">Positive</button>
+</div>
+</div>
+</section>
+
+
+<!--main Queue Table Container -->
+<section class="bg-surface-container-lowest border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50 border-b border-slate-200">
+<tr>
+<th class="px-6 py-4 text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Ticket ID</th>
+<th class="px-6 py-4 text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Customer</th>
+<th class="px-6 py-4 text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Assigned Agent</th>
+<th class="px-6 py-4 text-label-md font-label-md text-on-surface-variant uppercase tracking-wider text-center">Predicted Risk</th>
+<th class="px-6 py-4 text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Sentiment</th>
+<th class="px-6 py-4 text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Time in Queue</th>
+<th class="px-6 py-4"></th>
+</tr>
+</thead>
+<tbody id="ticket-list" class="divide-y divide-slate-100">
+    <!-- Tickets injected here -->
+</tbody>
+</table>
+</div>
+<div class="bg-slate-50 px-6 py-3 border-t border-slate-200 flex items-center justify-between">
+<p class="text-label-md text-on-surface-variant">Showing 4 of 142 prioritized tickets</p>
+<div class="flex items-center gap-4">
+<button class="text-label-md font-bold text-slate-400 cursor-not-allowed">Previous</button>
+
+<div class="flex items-center gap-1">
+<span class="h-6 w-6 flex items-center justify-center bg-primary text-white text-[10px] font-bold rounded-sm">1</span>
+<span class="h-6 w-6 flex items-center justify-center text-on-surface-variant text-[10px] font-bold rounded-sm hover:bg-slate-200 cursor-pointer">2</span>
+<span class="h-6 w-6 flex items-center justify-center text-on-surface-variant text-[10px] font-bold rounded-sm hover:bg-slate-200 cursor-pointer">3</span>
+</div>
+
+<button class="text-label-md font-bold text-primary hover:underline">Next</button>
+</div>
+</div>
+</section>
+<!-- Bottom Bento Stats -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<div class="bg-surface-container border border-outline-variant p-stack-md rounded-xl flex items-center justify-between">
+<div>
+<p class="text-label-md text-on-primary-container font-label-md uppercase">AVG RESPONSE TIME</p>
+<h4 class="text-headline-md font-headline-md text-primary">1h 42m</h4>
+<p class="text-xs text-secondary font-bold">↓ 12% vs last week</p>
+</div>
+
+
+<div class="h-12 w-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-stack-md rounded-xl flex items-center justify-between">
+<div>
+
+<p class="text-label-md text-on-primary-container font-label-md uppercase">PREVENTION RATE</p>
+<h4 class="text-headline-md font-headline-md text-primary">92.4%</h4>
+<p class="text-xs text-secondary font-bold">↑ 4.1% AI Accuracy</p>
+</div>
+
+
+<div class="h-12 w-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</div>
+</div>
+<div class="bg-error-container border border-error/20 p-stack-md rounded-xl flex items-center justify-between">
+<div>
+<p class="text-label-md text-on-error-container font-label-md uppercase">CRITICAL AT-RISK</p>
+<h4 class="text-headline-md font-headline-md text-on-error-container">14 Tickets</h4>
+<p class="text-xs text-on-error-container font-bold">Immediate action required</p>
+</div>
+
+<div class="h-12 w-12 rounded-full bg-error text-white flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="priority_high">priority_high</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<script>
+    // Application state (human-friendly names)
+    let tickets = []; let riskFilter = null;
+    let sentimentFilter = 'Any';
+
+    function setRiskFilter(risk) {
+        // Toggle the risk filter when users click the badges
+        if (riskFilter === risk) {
+            riskFilter = null;
+        } else {
+            riskFilter = risk;
+        }
+        updateFilterUI();
+        renderTickets();
+    }
+
+    function setSentimentFilter(sentiment) {
+        sentimentFilter = sentiment;
+        updateFilterUI();
+        renderTickets();
+    }
+
+    function updateFilterUI() {
+        ['High', 'Medium', 'Low'].forEach(risk => {
+            const btn = document.getElementById(`filter-risk-${risk.toLowerCase()}`);
+            if (risk === riskFilter) {
+                btn.classList.remove('bg-surface-container', 'text-on-primary-container');
+                btn.classList.add('bg-primary', 'text-white', 'border-primary');
+            } else {
+                btn.classList.add('bg-surface-container', 'text-on-primary-container');
+                btn.classList.remove('bg-primary', 'text-white', 'border-primary');
+            }
+        });
+
+        ['Negative', 'Any', 'Positive'].forEach(sent => {
+            const btn = document.getElementById(`filter-sent-${sent.toLowerCase()}`);
+            if (sent === sentimentFilter) {
+                btn.classList.remove('bg-surface-container', 'text-on-primary-container');
+                btn.classList.add('bg-primary', 'text-white', 'border-primary');
+            } else {
+                btn.classList.add('bg-surface-container', 'text-on-primary-container');
+                btn.classList.remove('bg-primary', 'text-white', 'border-primary');
+            }
+        });
+    }
+
+    function renderTickets() {
+        const tbody = document.getElementById('ticket-list');
+        tbody.innerHTML = '';
+        
+        // Apply current UI filters
+        const filteredTickets = tickets.filter(ticket => {
+            const riskPct = Math.round(ticket.predicted_risk * 100);
+            let riskCategory = 'Low';
+
+            if (riskPct > 70) riskCategory = 'High';
+            else if (riskPct > 40) riskCategory = 'Medium';
+
+
+            if (riskFilter && riskCategory !== riskFilter) return false;
+            if (sentimentFilter !== 'Any' && ticket.sentiment !== sentimentFilter) return false;
+            return true;
+        });
+
+        filteredTickets.forEach(ticket => {
+                const riskPct = Math.round(ticket.predicted_risk * 100);
+                
+                let riskBadge = '';
+                let rowColorClass = 'hover:bg-slate-50 transition-colors';
+                let alertIcon = '';
+                
+                if(riskPct > 70) {
+                    riskBadge = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-error text-white">${riskPct}% High</span>`;
+                    rowColorClass += ' bg-error-container/5';
+                    alertIcon = '<div class="risk-pulse w-2 h-2"></div>';
+                } else if (riskPct > 40) {
+                    riskBadge = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-tertiary-fixed text-on-tertiary-fixed-variant">${riskPct}% Med</span>`;
+                    alertIcon = '<span class="pl-5"></span>';
+                } else {
+                    riskBadge = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-secondary-fixed text-on-secondary-fixed-variant">${riskPct}% Low</span>`;
+                    alertIcon = '<span class="pl-5"></span>';
+                }
+
+
+                let sentColor = 'text-on-tertiary-container';
+                let sentIcon = 'sentiment_neutral';
+                if(ticket.sentiment === 'Negative') {
+                    sentColor = 'text-error';
+                    sentIcon = 'sentiment_dissatisfied';
+                } else if(ticket.sentiment === 'Positive') {
+                    sentColor = 'text-secondary';
+                    sentIcon = 'sentiment_satisfied';
+                }
+
+                tbody.innerHTML += `
+                    <tr class="${rowColorClass} cursor-pointer" onclick="window.location.href='/app/ticket_analysis_detail.html?id=${ticket.ticket_id}'">
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-3">
+                                ${alertIcon}
+                                <span class="text-data-mono font-data-mono text-primary font-bold">${ticket.ticket_id}</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-3 text-sm">
+                                <span class="truncate w-48">${ticket.text_snippet}...</span>
+                            </div>
+                        </td>
+                        
+
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-body-md text-slate-500">Auto</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            ${riskBadge}
+                        </td>
+                        
+                        <td class="px-6 py-4">
+                            <div class="flex items-center gap-2 ${sentColor}">
+                                <span class="material-symbols-outlined text-lg" data-icon="${sentIcon}">${sentIcon}</span>
+                                <span class="text-xs font-bold">${ticket.sentiment}</span>
+                            </div>
+                        </td>
+
+                        <td class="px-6 py-4">
+                            <div class="flex flex-col">
+                                <span class="text-body-md font-bold ${riskPct > 70 ? 'text-error' : 'text-on-surface'}">Recently</span>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <button class="text-slate-400 hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+    }
+
+    async function loadTickets() {
+        try {
+            const res = await fetch('/api/tickets?count=10');
+            const data = await res.json();
+
+            // Keep only tickets with human-friendly IDs
+            tickets = data.tickets.filter(t => !t.ticket_id.match(/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i));
+
+            renderTickets();
+        } catch (err) {
+            console.error('Failed to load tickets:', err);
+        }
+    }
+    document.addEventListener('DOMContentLoaded', loadTickets);
+</script>
+<script>
+    // Simple auth guard: redirect to login if no token
+    if (!localStorage.getItem('auth_token')) {
+        window.location.href = '/app/login.html';
+    }
+
+    
+    function logout() {
+        localStorage.removeItem('auth_token');
+        window.location.href = '/app/login.html';
+    }
+</script>
+</body></html>

@@ -1,0 +1,145 @@
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m src.escalation_prediction.data_loader
+2026-05-06 01:06:32,148 - INFO - Loading Huggingface dataset: rtweera/customer_care_emails
+2026-05-06 01:06:32,665 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/rtweera/customer_care_emails/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 01:06:32,720 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/rtweera/customer_care_emails/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8/README.md "HTTP/1.1 200 OK"
+2026-05-06 01:06:32,851 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/rtweera/customer_care_emails/resolve/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8/customer_care_emails.py "HTTP/1.1 404 Not Found"
+2026-05-06 01:06:33,252 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/rtweera/customer_care_emails/rtweera/customer_care_emails.py "HTTP/1.1 404 Not Found"
+2026-05-06 01:06:33,397 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/rtweera/customer_care_emails/revision/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8 "HTTP/1.1 200 OK"
+2026-05-06 01:06:33,530 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/rtweera/customer_care_emails/resolve/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-05-06 01:06:33,804 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=rtweera/customer_care_emails "HTTP/1.1 200 OK"
+2026-05-06 01:06:33,938 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/rtweera/customer_care_emails/tree/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+2026-05-06 01:06:34,084 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/rtweera/customer_care_emails/tree/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-05-06 01:06:34,294 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/rtweera/customer_care_emails/resolve/7f6c80693de054506c6fd03edcb0d6a4fd3c26a8/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-05-06 01:06:34,575 - INFO - #### Huggingface dataset:                                             subject                      sender  ... agent_efficiency customer_satisfaction
+0              Mercury Language Documentation Issue        john.doe@example.com  ...         very low                0.9043
+1          Re: Mercury Language Documentation Issue        support@aetheros.com  ...         very low                0.9043
+2          Re: Mercury Language Documentation Issue        john.doe@example.com  ...         very low                0.9043
+3          Re: Mercury Language Documentation Issue        john.doe@example.com  ...         very low                0.9043
+4  URGENT: User Permission Errors in Production API  kenneth77@davis-becker.com  ...         very low                0.6918
+
+[5 rows x 13 columns]
+2026-05-06 01:06:34,576 - INFO - Loaded 2259 rows from rtweera/customer_care_emails
+2026-05-06 01:06:34,581 - INFO - Loading Huggingface dataset: KameronB/synthetic-it-callcenter-tickets
+2026-05-06 01:06:34,731 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/KameronB/synthetic-it-callcenter-tickets/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-05-06 01:06:34,778 - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/KameronB/synthetic-it-callcenter-tickets/11db8c3d64ffca2027afc49da9db9516a3254bbc/README.md "HTTP/1.1 200 OK"
+2026-05-06 01:06:34,922 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/KameronB/synthetic-it-callcenter-tickets/resolve/11db8c3d64ffca2027afc49da9db9516a3254bbc/synthetic-it-callcenter-tickets.py "HTTP/1.1 404 Not Found"
+2026-05-06 01:06:35,043 - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/KameronB/synthetic-it-callcenter-tickets/KameronB/synthetic-it-callcenter-tickets.py "HTTP/1.1 404 Not Found"
+2026-05-06 01:06:35,217 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/KameronB/synthetic-it-callcenter-tickets/revision/11db8c3d64ffca2027afc49da9db9516a3254bbc "HTTP/1.1 200 OK"
+2026-05-06 01:06:35,355 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/KameronB/synthetic-it-callcenter-tickets/resolve/11db8c3d64ffca2027afc49da9db9516a3254bbc/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-05-06 01:06:35,494 - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=KameronB/synthetic-it-callcenter-tickets "HTTP/1.1 200 OK"
+2026-05-06 01:06:35,639 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/KameronB/synthetic-it-callcenter-tickets/tree/11db8c3d64ffca2027afc49da9db9516a3254bbc/data?recursive=true&expand=false "HTTP/1.1 404 Not Found"
+2026-05-06 01:06:35,786 - INFO - HTTP Request: GET https://huggingface.co/api/datasets/KameronB/synthetic-it-callcenter-tickets/tree/11db8c3d64ffca2027afc49da9db9516a3254bbc?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-05-06 01:06:36,063 - INFO - HTTP Request: HEAD https://huggingface.co/datasets/KameronB/synthetic-it-callcenter-tickets/resolve/11db8c3d64ffca2027afc49da9db9516a3254bbc/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-05-06 01:06:40,061 - INFO - #### Huggingface dataset:    Unnamed: 0       number      type  ...                                   poor_close_notes info_score_close_notes info_score_poor_close_notes
+0           0  TASK0049212   Request  ...                                      See worknotes                    0.8                         0.0
+1           1   INC0048604  Incident  ...                                           All set.                    0.9                         0.0
+2           2   INC0034238  Incident  ...                                           Resolved                    0.7                         0.0
+3           3   INC0068299  Incident  ...                    Ticket closed. Issue addressed.                    0.8                         0.0
+4           4    INC002060  Incident  ...  Issue resolved. User can access Aruba Networks...                    0.9                         0.1
+
+[5 rows x 24 columns]
+2026-05-06 01:06:40,061 - INFO - Loaded 27602 rows from KameronB/synthetic-it-callcenter-tickets
+2026-05-06 01:06:40,123 - ERROR - Failed to download from Kaggle dataset ajverse/customer-support-tickets-crm-dataset, Error KaggleApi.__init__() got an unexpected keyword argument 'config_dir'
+2026-05-06 01:06:40,123 - WARNING - Skipping ajverse/customer-support-tickets-crm-dataset: KaggleApi.__init__() got an unexpected keyword argument 'config_dir'
+2026-05-06 01:06:40,127 - INFO - #### Combined dataset has 29861 rows
+2026-05-06 01:06:40,155 - INFO - Saved raw combined data to data/processed\raw_combined.pkl
+
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m src.escalation_prediction.preprocessor
+2026-05-06 01:07:44,682 - INFO - Starting data preprocessing
+2026-05-06 01:07:44,698 - INFO - Handling missing values
+2026-05-06 01:07:44,709 - INFO - After handling missing values: 29861 rows
+2026-05-06 01:07:48,705 - INFO - Saved processed data to data/processed\cleaned_data.pkl
+
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m src.escalation_prediction.eda
+2026-05-06 01:08:07,392 - INFO - Starting EDA
+2026-05-06 01:08:08,788 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-05-06 01:08:08,807 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-05-06 01:08:09,022 - INFO - Saved class distribution plot to results\class_distribution.png
+2026-05-06 01:08:09,334 - INFO - Saved text length distribution plot to results\text_length_distribution.png
+2026-05-06 01:08:09,674 - INFO - Saved sentiment distribution plot to results\sentiment_distribution.png
+2026-05-06 01:08:12,218 - INFO - Saved word cloud to results\wordcloud.png
+2026-05-06 01:08:12,656 - INFO - Saved top words plot to results\top_words.png
+2026-05-06 01:08:13,106 - INFO - Saved interactive sentiment plot to results\sentiment_escalation_plot.html
+2026-05-06 01:08:13,157 - INFO - Saved data summary to results\data_summary.csv
+2026-05-06 01:08:13,157 - INFO - EDA completed
+
+
+
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>python -m src.scripts.train_baseline
+2026/05/06 01:23:27 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/05/06 01:23:27 INFO mlflow.store.db.utils: Updating database tables
+2026/05/06 01:23:28 INFO mlflow.tracking.fluent: Experiment with name 'Customer Escalation Prediction - Baseline Models' does not exist. Creating a new experiment.
+2026-05-06 01:23:28,391 - INFO - MLflow tracking URI set to SQLite store: sqlite:///D:/NCI/DataAnalytics/Projects/Data Mining And Machine Learning-11Feb26/code/SupportTicketEscalationPrediction/mlflow.db
+2026-05-06 01:23:28,391 - INFO - Loading data from path: data/processed/cleaned_data.pkl
+2026-05-06 01:23:30,211 - INFO - Loaded 29861 samples, total features 15008. Class counts: {1: 16011, 0: 13850}
+2026-05-06 01:23:30,232 - INFO - Data split is: train 23888, test 5973
+2026-05-06 01:23:30,486 - INFO - Training model is: LogisticRegression
+2026-05-06 01:24:24,790 - INFO - Model LogisticRegression, F1 0.5791, ROC-AUC: 0.6168)
+2026/05/06 01:24:24 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+2026/05/06 01:24:24 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+2026-05-06 01:24:27,917 - INFO - Confusion Matrix for LogisticRegression: is
+[[1814  956]
+ [1508 1695]]
+2026-05-06 01:24:28,314 - INFO - Model LogisticRegression saved successfully, path: models/baseline\LogisticRegression.pkl
+2026-05-06 01:24:28,338 - INFO - Training model is: RandomForest
+2026-05-06 01:25:13,939 - INFO - Model RandomForest, F1 0.7215, ROC-AUC: 0.7276)
+2026/05/06 01:25:14 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+2026/05/06 01:25:14 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+2026-05-06 01:25:18,035 - INFO - Confusion Matrix for RandomForest: is
+[[1761 1009]
+ [ 826 2377]]
+2026-05-06 01:25:18,579 - INFO - Model RandomForest saved successfully, path: models/baseline\RandomForest.pkl
+2026-05-06 01:25:18,602 - INFO - Training model is: XGBoost
+2026-05-06 01:27:04,687 - INFO - Model XGBoost, F1 0.7135, ROC-AUC: 0.7319)
+2026/05/06 01:27:04 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+2026/05/06 01:27:04 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+2026-05-06 01:27:08,133 - INFO - Confusion Matrix for XGBoost: is
+[[1846  924]
+ [ 914 2289]]
+2026-05-06 01:27:08,560 - INFO - Model XGBoost saved successfully, path: models/baseline\XGBoost.pkl
+2026-05-06 01:27:08,579 - INFO - Baseline model completed.
+
+
+
+
+
+
+
+
+
+
+
+(.venv) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction>uvicorn src.backend.main:app --port 8000
+Successfully trained live XGBoost inference model ....
+Inference engine loaded successfully.
+INFO:     Started server process [27016]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)

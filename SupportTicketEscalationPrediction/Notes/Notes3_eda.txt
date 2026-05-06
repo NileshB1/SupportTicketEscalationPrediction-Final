@@ -1,0 +1,70 @@
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>python -m src.eda
+2026-04-05 20:56:47,502 - INFO - Starting EDA
+2026-04-05 20:56:47,866 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-05 20:56:47,875 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-05 20:56:47,977 - INFO - Saved class distribution plot to results\class_distribution.png
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\eda.py", line 135, in <module>
+    perform_eda(data_path, result_path)
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\eda.py", line 119, in perform_eda
+    plot_text_length_distribution(df, os.path.join(results_path, "text_length_distribution.png"))
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\eda.py", line 38, in plot_text_length_distribution
+    sbn.histplot(df["text_length"], hue="escalated", bins=50, kde=True)
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\seaborn\distributions.py", line 1379, in histplot
+    p = _DistributionPlotter(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\seaborn\distributions.py", line 110, in __init__
+    super().__init__(data=data, variables=variables)
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\seaborn\_base.py", line 634, in __init__
+    self.assign_variables(data, variables)
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\seaborn\_base.py", line 673, in assign_variables
+    frame, names = self._assign_variables_wideform(data, **variables)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\seaborn\_base.py", line 723, in _assign_variables_wideform
+    raise ValueError(err)
+ValueError: The following variable cannot be assigned with wide-form data: `hue`
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>python -m src.eda
+2026-04-05 20:57:27,168 - INFO - Starting EDA
+2026-04-05 20:57:27,288 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-05 20:57:27,296 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-05 20:57:27,352 - INFO - Saved class distribution plot to results\class_distribution.png
+2026-04-05 20:57:27,568 - INFO - Saved text length distribution plot to results\text_length_distribution.png
+2026-04-05 20:57:27,731 - INFO - Saved sentiment distribution plot to results\sentiment_distribution.png
+2026-04-05 20:57:28,666 - INFO - Saved word cloud to results\wordcloud.png
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\eda.py", line 135, in <module>
+    perform_eda(data_path, result_path)
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\eda.py", line 122, in perform_eda
+    plot_top_words(df, os.path.join(results_path, "top_words.png"))
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\eda.py", line 85, in plot_top_words
+    words, counts = zip()(*top_words)
+                    ^^^^^^^^^^^^^^^^^
+TypeError: 'zip' object is not callable
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>python -m src.eda
+2026-04-05 20:57:57,715 - INFO - Starting EDA
+2026-04-05 20:57:57,831 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-05 20:57:57,839 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-04-05 20:57:57,892 - INFO - Saved class distribution plot to results\class_distribution.png
+2026-04-05 20:57:58,070 - INFO - Saved text length distribution plot to results\text_length_distribution.png
+2026-04-05 20:57:58,229 - INFO - Saved sentiment distribution plot to results\sentiment_distribution.png
+2026-04-05 20:57:59,099 - INFO - Saved word cloud to results\wordcloud.png
+2026-04-05 20:57:59,271 - INFO - Saved top words plot to results\top_words.png
+2026-04-05 20:57:59,663 - INFO - Saved interactive sentiment plot to results\sentiment_escalation_plot.html
+2026-04-05 20:57:59,683 - INFO - Saved data summary to results\data_summary.csv
+2026-04-05 20:57:59,683 - INFO - EDA completed
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>

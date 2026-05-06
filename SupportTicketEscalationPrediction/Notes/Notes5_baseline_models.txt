@@ -1,0 +1,144 @@
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>python -m src.baseline_modles
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Scripts\python.exe: No module named src.baseline_modles
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>python -m src.baseline_models
+2026/04/05 21:26:54 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/04/05 21:26:54 INFO mlflow.store.db.utils: Updating database tables
+2026/04/05 21:26:55 INFO mlflow.tracking.fluent: Experiment with name 'Customer Escalation Prediction - Baseline Models' does not exist. Creating a new experiment.
+2026-04-05 21:26:55,224 - INFO - Loading data from path: data/processed/cleaned_tickets.pkl
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 201, in <module>
+    model_trainer.baseline_training_run()
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 160, in baseline_training_run
+    self.load_data()    #load data
+    ^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 79, in load_data
+    df = pd.read_pickle(self.data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\pickle.py", line 185, in read_pickle
+    with get_handle(
+         ^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/processed/cleaned_tickets.pkl'
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>dir
+ Volume in drive D is DATA
+ Volume Serial Number is D496-FD8A
+
+ Directory of D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction
+
+05-04-2026  21:10    <DIR>          .
+05-04-2026  17:45    <DIR>          ..
+03-04-2026  18:26    <DIR>          data
+05-04-2026  17:47    <DIR>          datasets
+05-04-2026  21:26    <DIR>          models
+03-04-2026  18:21    <DIR>          notebooks
+05-04-2026  02:04    <DIR>          other
+05-04-2026  01:43               134 requirements.txt
+05-04-2026  21:11    <DIR>          results
+05-04-2026  17:59    <DIR>          src
+               1 File(s)            134 bytes
+               9 Dir(s)  234,042,896,384 bytes free
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>python -m src.baseline_models
+2026-04-05 21:28:29,866 - INFO - Loading data from path: data/processed/cleaned_tickets.pkl
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 201, in <module>
+    model_trainer.baseline_training_run()
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 160, in baseline_training_run
+    self.load_data()    #load data
+    ^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction\src\baseline_models.py", line 79, in load_data
+    df = pd.read_pickle(self.data_path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\pickle.py", line 185, in read_pickle
+    with get_handle(
+         ^^^^^^^^^^^
+  File "D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\pandas\io\common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'data/processed/cleaned_tickets.pkl'
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>python -m src.baseline_models
+2026-04-05 21:29:18,200 - INFO - Loading data from path: data/processed/cleaned_data.pkl
+2026-04-05 21:29:18,288 - INFO - Data loaded successfully for: 5504 samples, 4072 features
+2026-04-05 21:29:18,294 - INFO - Data split is: train 4403, test 1101
+2026-04-05 21:29:18,624 - INFO - Training model is: LogisticRegression
+2026-04-05 21:29:18,704 - INFO - Model LogisticRegression, F1 0.4950, ROC-AUC: 0.4852)
+2026/04/05 21:29:18 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+2026/04/05 21:29:18 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+2026-04-05 21:29:22,752 - INFO - Confusion Matrix for LogisticRegression: is
+[[265 286]
+ [275 275]]
+2026-04-05 21:29:23,166 - INFO - Model LogisticRegression saved successfully, path: models/baseline\LogisticRegression.pkl
+2026-04-05 21:29:23,197 - INFO - Training model is: RandomForest
+2026-04-05 21:30:47,259 - INFO - Model RandomForest, F1 0.5009, ROC-AUC: 0.4908)
+2026/04/05 21:30:47 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+2026/04/05 21:30:47 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+2026-04-05 21:30:49,971 - INFO - Confusion Matrix for RandomForest: is
+[[278 273]
+ [275 275]]
+2026-04-05 21:30:50,351 - INFO - Model RandomForest saved successfully, path: models/baseline\RandomForest.pkl
+2026-04-05 21:30:50,376 - INFO - Training model is: XGBoost
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\xgboost\training.py:200: UserWarning: [21:30:52] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\learner.cc:782:
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\xgboost\training.py:200: UserWarning: [21:30:53] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\learner.cc:782:
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\xgboost\training.py:200: UserWarning: [21:30:54] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\learner.cc:782:
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\xgboost\training.py:200: UserWarning: [21:30:55] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\learner.cc:782:
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\xgboost\training.py:200: UserWarning: [21:30:56] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\learner.cc:782:
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\.env\Lib\site-packages\xgboost\training.py:200: UserWarning: [21:30:57] WARNING: C:\actions-runner\_work\xgboost\xgboost\src\learner.cc:782:
+Parameters: { "use_label_encoder" } are not used.
+
+  bst.update(dtrain, iteration=i, fobj=obj)
+2026-04-05 21:30:57,950 - INFO - Model XGBoost, F1 0.5031, ROC-AUC: 0.4929)
+2026/04/05 21:30:58 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+2026/04/05 21:30:58 WARNING mlflow.sklearn: Saving scikit-learn models in the pickle or cloudpickle format requires exercising caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during deserialization. The recommended safe alternative is the 'skops' format. For more information, see: https://scikit-learn.org/stable/model_persistence.html
+2026-04-05 21:31:00,854 - INFO - Confusion Matrix for XGBoost: is
+[[265 286]
+ [269 281]]
+2026-04-05 21:31:01,367 - INFO - Model XGBoost saved successfully, path: models/baseline\XGBoost.pkl
+2026-04-05 21:31:01,384 - INFO - Baseline model completed.
+
+(.env) D:\NCI\DataAnalytics\Projects\Data Mining And Machine Learning-11Feb26\code\SupportTicketEscalationPrediction\escalation_prediction>

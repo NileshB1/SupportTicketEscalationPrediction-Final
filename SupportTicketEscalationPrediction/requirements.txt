@@ -1,0 +1,14 @@
+plotly
+numpy
+imbalanced-learn
+matplotlib
+seaborn
+xgboost
+scikit-learn
+datasets
+kaggle
+pandas
+tqdm
+mlflow
+nltk
+wordcloud
